@@ -1,0 +1,80 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.4in]{geometry}
+\usepackage[all]{xy}
+
+\usepackage{amsmath,amsthm,amssymb,color,latexsym,graphicx}
+\usepackage{geometry}        
+\geometry{a4paper, top=1cm}    
+
+\usepackage[scaled]{helvet}
+\renewcommand\familydefault{\sfdefault} 
+\usepackage[T1]{fontenc}
+
+\usepackage{tabto}
+
+\usepackage[numbers]{natbib}
+
+\linespread{1.0}
+
+\pagenumbering{gobble}
+
+\newcommand{\sect}[1]{\begin{center}\textbf{#1}\end{center}}
+
+\begin{document}
+	
+\noindent Student name: Smitesh Nitin Patil \tabto{8cm} Supervisor contact name: Dr. Karl Mason \\
+\noindent Student number: 22223696 \tabto{8cm} Supervisor contact email: karl.mason@universityofgalway.ie 
+\vspace{0.2cm}
+
+\sect{Uncovering Optimal Solar Site Locations in India using Unsupervised Learning Approaches}
+
+\sect{Introduction}
+The process of transitioning the global energy supply from fossil fuel-based sources to
+sustainable energy sources like wind and solar will be crucial 
+for mankind to make in the 21st century. Solar energy is generated from photovoltaic
+cells which need a high amount of solar irradiance throughout the year to be profitable.
+Countries in tropical regions like parts of India tend to receive abundant sunlight throughout 
+the year. However, many aspects need to be studied before identifying promising regions where
+solar farms could be built to tap into that region's solar potential, like the slope gradient of
+the terrain, proximity to urban centers, and nature, wildlife preserve areas.
+\sect{Background Research or Context}
+There are several challenges in identifying and classifying sites favorable for solar energy
+ predictions from data gathering to methodology for identification. Studies for solar site 
+selections have been carried out by Colak et al.\cite{colak_memisoglu_gercek_2020} and 
+Al Garni et al.\cite{al_garni_awasthi_2017} for provinces in Turkey and Saudia Arabia respectively. 
+Both authors used the Analytical Hierarch Process(AHP) a Multi-Criteria Decision Making(MCDM)
+ the process where they would rank various aspects of geographical features and generate weights for 
+the importance of aspects or features. Other MCDMs processes like the Fuzzy Logic model for site 
+selection done by Zoghi et al.\cite{zoghi_houshang_ehsani_sadat_javad_amiri_karimi_2017} in Iran. 
+Finally, using GIS data and carrying out AHP for identifying solar and wind power sites in India was done 
+by Saraswat et al. \cite{saraswat_digalwar_yadav_kumar_2021} in 2021.
+\sect{Proposed Project}
+There has been a lot of research in this domain but all the studies more or less have used Multi-Criteria
+Decision-making processes to evaluate GIS information and make suggestions.
+This study aims to develop a novel unsupervised model for clustering potential sites
+for solar farms. Firstly, the gathering of GIS(geographical information systems) 
+data for multiple layers of information like terrain type, solar irradiance, wildlife protected sanctuaries.
+Using GIS data to identify sites of concern has been done for studies like detecting landslide occurrences have 
+been done by Chang et al. \cite{chang_du_zhang_huang_chen_li_guo_2020} using unsupervised learning approach,
+but it has been relatively absent in the identification of areas suitable for renewable energy farms.
+Secondly, after data gathering, it would be trained using clustering algorithms to identify 
+sites based on selected features. Lastly, In the previous studies, it was hard to quantify the robustness 
+and accuracy of the developed models, but here we can use unsupervised learning evaluation metrics 
+like purity, and residual sum squares to evaluate our results. Additionally, auto-labeling of data 
+could also be tried with set criteria, and then robust supervised learning methods could be used
+to develop models on the labeled data. 
+\sect{Timeline}
+\begin{itemize}
+    \setlength\itemsep{0em}
+    \item Literature review - April 31, 2023
+    \item Project Proposal - June 30, 2023
+    \item Project Implementation - July 30, 2023
+    \item Thesis writeup - August 20, 2023
+    \item Project Completion - August 31, 2023
+\end{itemize}
+\vspace{-\baselineskip}
+\vspace{-\baselineskip}
+\bibliographystyle{IEEEtranN}
+\renewcommand{\refname}{{\normalsize \sect{References}}}
+\bibliography{PDD_references}
+\end{document}
