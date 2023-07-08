@@ -6,11 +6,11 @@ from osgeo import gdal
 import re
 
 def create_csv():
-    pass
-
-
-if __name__ == "__main__":
     files = glob.glob("/home/smitesh22/Data/DEM/*.tif")
+    
+    data = pd.read_csv("/home/smitesh22/Data/extent.csv")
+    
+    pattern = r"\/([^\/]+)\.tif$"
     
     for i, filename in enumerate(files):
         im = gdal.Open(filename)
@@ -34,10 +34,7 @@ if __name__ == "__main__":
         ul_lon, ul_lat, _ = transform.TransformPoint(ulx, uly)
         lr_lon, lr_lat, _ = transform.TransformPoint(lrx, lry)
         
-        data = pd.read_csv("/home/smitesh22/Data/extent.csv")
-        
-        
-        pattern = r"\/([^\/]+)\.tif$"
+
         
         match = re.search(pattern, filename)
         
@@ -57,4 +54,8 @@ if __name__ == "__main__":
 
         # Write the updated DataFrame back to CSV
         data.to_csv("/home/smitesh22/Data/extent.csv", index=False)
+
+
+if __name__ == "__main__":
+    create_csv()
                     
