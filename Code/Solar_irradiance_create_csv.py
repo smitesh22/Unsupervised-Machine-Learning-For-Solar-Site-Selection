@@ -10,8 +10,6 @@ def create_csv():
     
     out = pd.read_csv('/home/smitesh22/Data/solar_irradiance.csv')
     
-    
-    
     for location in files:
         df = pd.read_csv(location, nrows=2, header=None)
         
