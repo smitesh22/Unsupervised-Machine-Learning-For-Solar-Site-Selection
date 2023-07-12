@@ -11,6 +11,7 @@ import numpy as np
 import pandas as pd
 import re
 import time
+import glob
 
 #check the dem data 
 
@@ -37,3 +38,22 @@ if __name__ == "__main__":
         print(f"Checked file {row.filename}.tif")
     
     time.sleep(2)
+    
+    
+    for i, file in enumerate(glob.glob("/home/smitesh22/Data/Solar Irradiance/*.csv")):    
+        df = pd.read_csv(file, nrows=2, header=None)
+        latitude = int(np.round(float(df[5][1])))
+        longitude = int(np.round(float(df[6][1])))
+        pattern = r'N(\d+)E(\d+)_wgs84.csv'
+        
+        match = re.search(pattern, file)
+        if match:
+            number1 = int(match.group(1))
+            number2 = int(match.group(2))
+        assert latitude == number1 and longitude == number2, f'Solar Irradiance data problem with file {file}'
+        
+        print(f"Checked file {file}")
+        
+    time.sleep(2)
+    
+    
