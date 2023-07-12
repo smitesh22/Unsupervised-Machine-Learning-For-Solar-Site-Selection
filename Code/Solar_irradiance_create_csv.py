@@ -32,7 +32,7 @@ def create_csv():
         file = pd.read_csv(location,  skiprows=2)
         
         #subset important attr
-        df = file[['GHI',
+        df = file[['GHI',   
                   'DHI',
                   'DNI',
                   'Clearsky DHI',
