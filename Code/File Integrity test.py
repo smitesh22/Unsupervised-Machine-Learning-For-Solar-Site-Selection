@@ -12,14 +12,15 @@ import pandas as pd
 import re
 import time
 import glob
+import os
+from osgeo import ogr
 
 #check the dem data 
 
 if __name__ == "__main__":
     
-    time.sleep(2)
-    
     print("----------------CHECK DEM DATA INTEGRITY--------------------")
+    time.sleep(2)
     
     dem_data = pd.read_csv("/home/smitesh22/Data/extent.csv")
     
@@ -37,8 +38,9 @@ if __name__ == "__main__":
         
         print(f"Checked file {row.filename}.tif")
     
-    time.sleep(2)
     
+    print("----------------CHECK SOLAR IRRADIANCE INTEGRITY--------------------")
+    time.sleep(2)
     
     for i, file in enumerate(glob.glob("/home/smitesh22/Data/Solar Irradiance/*.csv")):    
         df = pd.read_csv(file, nrows=2, header=None)
@@ -54,6 +56,29 @@ if __name__ == "__main__":
         
         print(f"Checked file {file}")
         
+    print("----------------CHECK GIS INTEGRITY--------------------")
     time.sleep(2)
     
+    path = "/home/smitesh22/Data/GIS Extracted/"
+    directories = [os.path.join(path, name) for name in os.listdir(path) if os.path.isdir(os.path.join(path, name))]
     
+    driver = ogr.GetDriverByName('ESRI Shapefile')
+    file_paths = []
+    for directory in directories:
+        for root, dirs, files in os.walk(directory):
+            for dir_name in dirs:
+                file_paths.append(os.path.join(root, dir_name))
+                
+    driver = ogr.GetDriverByName('ESRI Shapefile')
+    
+    for shape_file in file_paths[1::2]:
+        match = re.findall(r'\d+', shape_file)
+        match  = [int(num) for num in match[1:3]]
+        dataset = driver.Open(shape_file, 0)
+        layer = dataset.GetLayer()
+        extent = layer.GetExtent()
+        min_x, max_x, min_y, max_y = extent
+        coords = [int(np.round(coord)) for coord in extent]
+            
+        assert abs(coords[2] - match[0]) in (0, 1) and abs(coords[0] - match[1]) in (0, 1), f'Error with shape file {shape_file}'
+        print(f'Checked file {shape_file}')
