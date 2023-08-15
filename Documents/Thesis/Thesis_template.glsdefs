@@ -1,0 +1,252 @@
+\glsdefs@newdocentry{mlp}%
+{%
+name={MLP},%
+sort={MLP},%
+type={main},%
+first={Multi-Layer Perceptron\glsspace (MLP)},%
+firstplural={Multi-Layer Perceptron\acrpluralsuffix \glsspace (MLP\acrpluralsuffix )},%
+text={MLP},%
+plural={MLP\acrpluralsuffix },%
+description={Multi-Layer Perceptron},%
+descriptionplural={Multi-Layer Perceptron\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Multi-Layer Perceptron},%
+longplural={Multi-Layer Perceptrons},%
+short={MLP},%
+shortplural={MLPs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{MCDMs}%
+{%
+name={Multi-Criteria Decision-Making Methods},%
+sort={Multi-Criteria Decision-Making Methods},%
+type={main},%
+first={\protect \newacronym \glsspace (Multi-Criteria Decision-Making Methods)},%
+firstplural={\newacronym \acrpluralsuffix \glsspace (Multi-Criteria Decision-Making Methods\acrpluralsuffix )},%
+text={Multi-Criteria Decision-Making Methods},%
+plural={Multi-Criteria Decision-Making Methods\acrpluralsuffix },%
+description={\newacronym },%
+descriptionplural={\newacronym \acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={\protect \newacronym },%
+longplural={\protect \newacronym s},%
+short={Multi-Criteria Decision-Making Methods},%
+shortplural={Multi-Criteria Decision-Making Methodss},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{NREL}%
+{%
+name={National Renewable Energy Laboratory},%
+sort={National Renewable Energy Laboratory},%
+type={main},%
+first={\protect \newacronym \glsspace (National Renewable Energy Laboratory)},%
+firstplural={\newacronym \acrpluralsuffix \glsspace (National Renewable Energy Laboratory\acrpluralsuffix )},%
+text={National Renewable Energy Laboratory},%
+plural={National Renewable Energy Laboratory\acrpluralsuffix },%
+description={\newacronym },%
+descriptionplural={\newacronym \acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={\protect \newacronym },%
+longplural={\protect \newacronym s},%
+short={National Renewable Energy Laboratory},%
+shortplural={National Renewable Energy Laboratorys},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{DEM}%
+{%
+name={Digital Elevation Model},%
+sort={Digital Elevation Model},%
+type={main},%
+first={\protect \newacronym \glsspace (Digital Elevation Model)},%
+firstplural={\newacronym \acrpluralsuffix \glsspace (Digital Elevation Model\acrpluralsuffix )},%
+text={Digital Elevation Model},%
+plural={Digital Elevation Model\acrpluralsuffix },%
+description={\newacronym },%
+descriptionplural={\newacronym \acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={\protect \newacronym },%
+longplural={\protect \newacronym s},%
+short={Digital Elevation Model},%
+shortplural={Digital Elevation Models},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{OSM}%
+{%
+name={OpenStreeMap},%
+sort={OpenStreeMap},%
+type={main},%
+first={\protect \newacronym \glsspace (OpenStreeMap)},%
+firstplural={\newacronym \acrpluralsuffix \glsspace (OpenStreeMap\acrpluralsuffix )},%
+text={OpenStreeMap},%
+plural={OpenStreeMap\acrpluralsuffix },%
+description={\newacronym },%
+descriptionplural={\newacronym \acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={\protect \newacronym },%
+longplural={\protect \newacronym s},%
+short={OpenStreeMap},%
+shortplural={OpenStreeMaps},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{GHI}%
+{%
+name={Global Horizontal Irradiance},%
+sort={Global Horizontal Irradiance},%
+type={main},%
+first={\protect \newacronym \glsspace (Global Horizontal Irradiance)},%
+firstplural={\newacronym \acrpluralsuffix \glsspace (Global Horizontal Irradiance\acrpluralsuffix )},%
+text={Global Horizontal Irradiance},%
+plural={Global Horizontal Irradiance\acrpluralsuffix },%
+description={\newacronym },%
+descriptionplural={\newacronym \acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={\protect \newacronym },%
+longplural={\protect \newacronym s},%
+short={Global Horizontal Irradiance},%
+shortplural={Global Horizontal Irradiances},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{CR}%
+{%
+name={Consistency Ratio},%
+sort={Consistency Ratio},%
+type={main},%
+first={\protect \newacronym \glsspace (Consistency Ratio)},%
+firstplural={\newacronym \acrpluralsuffix \glsspace (Consistency Ratio\acrpluralsuffix )},%
+text={Consistency Ratio},%
+plural={Consistency Ratio\acrpluralsuffix },%
+description={\newacronym },%
+descriptionplural={\newacronym \acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={\protect \newacronym },%
+longplural={\protect \newacronym s},%
+short={Consistency Ratio},%
+shortplural={Consistency Ratios},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{RI}%
+{%
+name={Random Consistency Index},%
+sort={Random Consistency Index},%
+type={main},%
+first={\protect \newacronym \glsspace (Random Consistency Index)},%
+firstplural={\newacronym \acrpluralsuffix \glsspace (Random Consistency Index\acrpluralsuffix )},%
+text={Random Consistency Index},%
+plural={Random Consistency Index\acrpluralsuffix },%
+description={\newacronym },%
+descriptionplural={\newacronym \acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={\protect \newacronym },%
+longplural={\protect \newacronym s},%
+short={Random Consistency Index},%
+shortplural={Random Consistency Indexs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{BMU}%
+{%
+name={Best Matching Unit},%
+sort={Best Matching Unit},%
+type={main},%
+first={\protect \begin  \glsspace (Best Matching Unit)},%
+firstplural={\begin \acrpluralsuffix \glsspace (Best Matching Unit\acrpluralsuffix )},%
+text={Best Matching Unit},%
+plural={Best Matching Unit\acrpluralsuffix },%
+description={\begin },%
+descriptionplural={\begin \acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={\protect \begin  },%
+longplural={\protect \begin  s},%
+short={Best Matching Unit},%
+shortplural={Best Matching Units},%
+counter={page},%
+parent={},%
+%
+}%
+

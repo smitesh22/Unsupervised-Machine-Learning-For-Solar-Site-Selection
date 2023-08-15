@@ -1,7 +1,13 @@
-\babel@toc {english}{}
+\babel@toc {english}{}\relax 
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces A suitable caption. Image from \cite {10.1145/3386569.3392375}. Keep in mind that images, graphs, tables and other figures not created by yourself require references (\texttt {\textbackslash cite}).\relax }}{2}{figure.caption.4}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Suitable sites for Solar Powerplant wiht cost factor by author Colak et al.\cite {colak2020}\relax }}{5}{figure.caption.4}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Optimal sites by level of importance by author \cite {saraswat2021}\relax }}{8}{figure.caption.5}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Elevation map for coordinates N 20' E 78\relax }}{9}{figure.caption.6}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Solar Irradiance components\cite {vignola2023}\relax }}{10}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Solar irradiance data for co-ordinates for coordinates N 20' E 78'\relax }}{10}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Attributes for Western India\relax }}{12}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Flowchart of the model proposed by\cite {ahmadlou2020}\relax }}{15}{figure.caption.10}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
