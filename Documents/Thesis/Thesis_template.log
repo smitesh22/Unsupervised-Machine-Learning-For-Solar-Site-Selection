@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.30)  15 AUG 2023 23:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.30)  16 AUG 2023 00:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -646,27 +646,30 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 
 LaTeX Warning: Label `fig:my_label' multiply defined.
 
+
+LaTeX Warning: Label `fig:my_label5' multiply defined.
+
 )
 \openout1 = `Thesis_template.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -727,7 +730,7 @@ Package grfext Info: Graphics extension search list:
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 83.
+Package hyperref Info: Link coloring ON on input line 84.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -737,14 +740,14 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count346
 )
-LaTeX Info: Redefining \ref on input line 83.
-LaTeX Info: Redefining \pageref on input line 83.
-LaTeX Info: Redefining \nameref on input line 83.
+LaTeX Info: Redefining \ref on input line 84.
+LaTeX Info: Redefining \pageref on input line 84.
+LaTeX Info: Redefining \nameref on input line 84.
  (./Thesis_template.out) (./Thesis_template.out)
 \@outlinefile=\write4
 \openout4 = `Thesis_template.out'.
 
-Package backref Info: ** backref set up for natbib ** on input line 83.
+Package backref Info: ** backref set up for natbib ** on input line 84.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: longtable package is loaded.
  (/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty
@@ -753,38 +756,41 @@ Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
 Package caption Info: supertabular package is loaded.
 Package caption Info: End \AtBeginDocument code.
  (./Thesis_template.glsdefs)
-<Figures/University_Of_Galway_Logo__Positive_Landscape.png, id=108, 1693.527pt x 640.3122pt>
+<Figures/University_Of_Galway_Logo__Positive_Landscape.png, id=120, 1693.527pt x 640.3122pt>
 File: Figures/University_Of_Galway_Logo__Positive_Landscape.png Graphic file (type png)
 <use Figures/University_Of_Galway_Logo__Positive_Landscape.png>
-Package pdftex.def Info: Figures/University_Of_Galway_Logo__Positive_Landscape.png  used on input line 87.
+Package pdftex.def Info: Figures/University_Of_Galway_Logo__Positive_Landscape.png  used on input line 88.
 (pdftex.def)             Requested size: 398.33858pt x 150.61017pt.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Figures/University_Of_Galway_Logo__Positive_Landscape.png>] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 100--104
+Underfull \hbox (badness 10000) in paragraph at lines 101--105
 
  []
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 105.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 106.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 105.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 106.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (16.08669pt too wide) in paragraph at lines 106--106
+Overfull \hbox (16.08669pt too wide) in paragraph at lines 107--107
 []|\OT1/cmr/m/n/12 Signature:| 
  []
 
 [1
 
 ]
-Overfull \hbox (14.00377pt too wide) in paragraph at lines 119--125
+Overfull \hbox (14.00377pt too wide) in paragraph at lines 120--126
 \OT1/cmr/m/n/12 Voltaic) in-stal-la-tions. By har-ness-ing ad-vanced ma-chine learn-ing method-
  []
 
-[2] (./Thesis_template.toc [3
+[2] (./Thesis_template.toc
+Package acronym Info: Label `acro:GIS' newly defined as it shall be overridden
+although it is yet undefined on input line 19.
+ [3
 
 ])
 \tf@toc=\write5
@@ -802,25 +808,25 @@ Overfull \hbox (14.00377pt too wide) in paragraph at lines 119--125
 
 
 
-LaTeX Warning: Hyper reference `acro:CR' on page vi undefined on input line 150.
+LaTeX Warning: Hyper reference `acro:CR' on page vi undefined on input line 151.
 
 
-LaTeX Warning: Hyper reference `acro:CR' on page vi undefined on input line 150.
+LaTeX Warning: Hyper reference `acro:CR' on page vi undefined on input line 151.
 
 
-LaTeX Warning: Hyper reference `acro:CI' on page vi undefined on input line 151.
+LaTeX Warning: Hyper reference `acro:CI' on page vi undefined on input line 152.
 
 
-LaTeX Warning: Hyper reference `acro:CI' on page vi undefined on input line 151.
+LaTeX Warning: Hyper reference `acro:CI' on page vi undefined on input line 152.
 
 [6
 
 ]
 
-LaTeX Warning: Hyper reference `acro:RI' on page vii undefined on input line 152.
+LaTeX Warning: Hyper reference `acro:RI' on page vii undefined on input line 153.
 
 
-LaTeX Warning: Hyper reference `acro:RI' on page vii undefined on input line 152.
+LaTeX Warning: Hyper reference `acro:RI' on page vii undefined on input line 153.
 
 No file Thesis_template.acr.
 [7]
@@ -828,136 +834,133 @@ Chapter 1.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.184 	G
+l.187 	G
         iven the task's significance, it's crucial to rapidly identify new l... [1
 
 
 ]
 Package acronym Info: Label `acro:PV' newly defined as it shall be overridden
-although it is yet undefined on input line 189.
+although it is yet undefined on input line 192.
 Package acronym Info: Label `acro:MCDMs' newly defined as it shall be overridden
-although it is yet undefined on input line 190.
+although it is yet undefined on input line 193.
 Package acronym Info: Label `acro:AHP' newly defined as it shall be overridden
-although it is yet undefined on input line 190.
+although it is yet undefined on input line 193.
 Package acronym Info: Label `acro:NREL' newly defined as it shall be overridden
-although it is yet undefined on input line 197.
+although it is yet undefined on input line 200.
 Package acronym Info: Label `acro:DEM' newly defined as it shall be overridden
-although it is yet undefined on input line 197.
+although it is yet undefined on input line 200.
 Package acronym Info: Label `acro:SRTM' newly defined as it shall be overridden
-although it is yet undefined on input line 197.
+although it is yet undefined on input line 200.
 Package acronym Info: Label `acro:USGS' newly defined as it shall be overridden
-although it is yet undefined on input line 197.
+although it is yet undefined on input line 200.
 Package acronym Info: Label `acro:OSM' newly defined as it shall be overridden
-although it is yet undefined on input line 197.
+although it is yet undefined on input line 200.
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.201 	\section
+l.204 	\section
                {Purpose} [2]
-Overfull \hbox (2.5974pt too wide) in paragraph at lines 206--207
+Overfull \hbox (2.5974pt too wide) in paragraph at lines 209--210
 []\OT1/cmr/m/n/12 To de-velop an in-no-va-tive ap-proach uti-liz-ing un-su-per-vised and self-supervised
  []
 
 [3]
 Chapter 2.
 
-Overfull \hbox (24.94086pt too wide) in paragraph at lines 222--222
+Overfull \hbox (24.94086pt too wide) in paragraph at lines 225--225
 []\OT1/cmr/bx/n/17.28 Criteria and Fac-tors Af-fect-ing Decision-making 
  []
 
 
-Overfull \hbox (20.49031pt too wide) in paragraph at lines 229--230
+Overfull \hbox (20.49031pt too wide) in paragraph at lines 232--233
 []\OT1/cmr/bx/n/12 Solar En-ergy Po-ten-tial: \OT1/cmr/m/n/12 Gaug-ing the so-lar po-ten-tial of a re-gion is paramount.
  []
 
 [4
 
 ]
-<Figures/Colak.png, id=335, 330.48468pt x 243.91125pt>
+<Figures/Colak.png, id=361, 330.48468pt x 243.91125pt>
 File: Figures/Colak.png Graphic file (type png)
 <use Figures/Colak.png>
-Package pdftex.def Info: Figures/Colak.png  used on input line 245.
+Package pdftex.def Info: Figures/Colak.png  used on input line 248.
 (pdftex.def)             Requested size: 206.28247pt x 152.25061pt.
  [5 <./Figures/Colak.png>] [6]
-<Figures/Saraswat.png, id=363, 251.43938pt x 278.54062pt>
+<Figures/Saraswat.png, id=389, 251.43938pt x 278.54062pt>
 File: Figures/Saraswat.png Graphic file (type png)
 <use Figures/Saraswat.png>
-Package pdftex.def Info: Figures/Saraswat.png  used on input line 292.
+Package pdftex.def Info: Figures/Saraswat.png  used on input line 295.
 (pdftex.def)             Requested size: 206.28247pt x 228.51527pt.
  [7]
 Package acronym Info: Label `acro:NASA' newly defined as it shall be overridden
-although it is yet undefined on input line 301.
-
-
-Package acronym Warning: Acronym `NASA' is not defined on input line 301.
-
-
-Package acronym Warning: Acronym `NASA' is not defined on input line 301.
-
-<Figures/Terrain.png, id=378, 392.21532pt x 188.95593pt>
+although it is yet undefined on input line 304.
+<Figures/Terrain.png, id=405, 392.21532pt x 188.95593pt>
 File: Figures/Terrain.png Graphic file (type png)
 <use Figures/Terrain.png>
-Package pdftex.def Info: Figures/Terrain.png  used on input line 307.
+Package pdftex.def Info: Figures/Terrain.png  used on input line 310.
 (pdftex.def)             Requested size: 330.05322pt x 159.01886pt.
-[8 <./Figures/Saraswat.png>]
+ [8 <./Figures/Saraswat.png>]
 Package acronym Info: Label `acro:NSRDB' newly defined as it shall be overridden
-although it is yet undefined on input line 314.
+although it is yet undefined on input line 317.
 Package acronym Info: Label `acro:GHI' newly defined as it shall be overridden
-although it is yet undefined on input line 320.
+although it is yet undefined on input line 323.
 Package acronym Info: Label `acro:DNI' newly defined as it shall be overridden
-although it is yet undefined on input line 322.
+although it is yet undefined on input line 325.
 Package acronym Info: Label `acro:DHI' newly defined as it shall be overridden
-although it is yet undefined on input line 324.
-<Figures/Solar Irradiance.png, id=393, 456.95718pt x 301.125pt>
+although it is yet undefined on input line 327.
+<Figures/Solar Irradiance.png, id=419, 456.95718pt x 301.125pt>
 File: Figures/Solar Irradiance.png Graphic file (type png)
 <use Figures/Solar Irradiance.png>
-Package pdftex.def Info: Figures/Solar Irradiance.png  used on input line 329.
+Package pdftex.def Info: Figures/Solar Irradiance.png  used on input line 332.
 (pdftex.def)             Requested size: 206.28247pt x 135.9323pt.
  [9 <./Figures/Terrain.png>]
-<Figures/Solar Graphs.png, id=402, 651.93562pt x 497.60907pt>
+<Figures/Solar Graphs.png, id=429, 651.93562pt x 497.60907pt>
 File: Figures/Solar Graphs.png Graphic file (type png)
 <use Figures/Solar Graphs.png>
-Package pdftex.def Info: Figures/Solar Graphs.png  used on input line 337.
+Package pdftex.def Info: Figures/Solar Graphs.png  used on input line 340.
 (pdftex.def)             Requested size: 412.56496pt x 314.91524pt.
  [10 <./Figures/Solar Irradiance.png> <./Figures/Solar Graphs.png>]
-<Figures/Other attributes.png, id=412, 1263.97218pt x 542.77782pt>
+<Figures/Other attributes.png, id=439, 1263.97218pt x 542.77782pt>
 File: Figures/Other attributes.png Graphic file (type png)
 <use Figures/Other attributes.png>
-Package pdftex.def Info: Figures/Other attributes.png  used on input line 362.
+Package pdftex.def Info: Figures/Other attributes.png  used on input line 365.
 (pdftex.def)             Requested size: 412.56496pt x 177.16264pt.
  [11] [12 <./Figures/Other attributes.png>] [13]
 Package acronym Info: Label `acro:SOM' newly defined as it shall be overridden
-although it is yet undefined on input line 407.
+although it is yet undefined on input line 410.
 
-Overfull \hbox (3.95988pt too wide) in paragraph at lines 407--410
+Overfull \hbox (3.95988pt too wide) in paragraph at lines 410--413
 \OT1/cmr/m/n/12 The Ko-ho-nen model, also known as the Ko-ho-nen neu-ral net-work or [][][]Self-Organizing
  []
 
 Package acronym Info: Label `acro:BMU' newly defined as it shall be overridden
-although it is yet undefined on input line 417.
+although it is yet undefined on input line 420.
 [14]
-<Figures/AutoEncoder.png, id=458, 521.69907pt x 345.54094pt>
+<Figures/AutoEncoder.png, id=484, 521.69907pt x 345.54094pt>
 File: Figures/AutoEncoder.png Graphic file (type png)
 <use Figures/AutoEncoder.png>
-Package pdftex.def Info: Figures/AutoEncoder.png  used on input line 431.
+Package pdftex.def Info: Figures/AutoEncoder.png  used on input line 434.
 (pdftex.def)             Requested size: 412.56496pt x 273.25905pt.
 Package acronym Info: Label `acro:MLP' newly defined as it shall be overridden
-although it is yet undefined on input line 436.
+although it is yet undefined on input line 439.
  [15 <./Figures/AutoEncoder.png>] [16]
 Chapter 3.
-Package acronym Info: Label `acro:GIS' newly defined as it shall be overridden
-although it is yet undefined on input line 469.
-
-Package acronym Warning: Acronym `GIS' is not defined on input line 469.
-
-
-Package acronym Warning: Acronym `GIS' is not defined on input line 469.
-
 [17
 
-] [18]
+]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 490.
+ [18]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ac' on input line 523.
+
+<Figures/india_map_with_highlighted_data.png, id=528, 1156.32pt x 1159.2108pt>
+File: Figures/india_map_with_highlighted_data.png Graphic file (type png)
+<use Figures/india_map_with_highlighted_data.png>
+Package pdftex.def Info: Figures/india_map_with_highlighted_data.png  used on input line 528.
+(pdftex.def)             Requested size: 412.56496pt x 413.58337pt.
+[19] [20 <./Figures/india_map_with_highlighted_data.png>] [21]
 Chapter 4.
-[19
+[22
 
 ]
 Chapter 5.
@@ -965,9 +968,9 @@ Chapter 5.
 \tf@brf=\write8
 \openout8 = `Thesis_template.brf'.
 
- [20
+ [23
 
-] [21
+] [24
 
 ]
 Underfull \hbox (badness 2318) in paragraph at lines 74--74
@@ -989,7 +992,7 @@ Overfull \hbox (33.20686pt too wide) in paragraph at lines 74--74
 \OT1/cmr/m/n/12 indias-[]solar-[]boom-[]reverses-[]gas-[]momentum-[]cements-[]coal-[]use-[]maguire-[]2022-[]12-[]14/$[][]
  []
 
-[22]) [23] (./Thesis_template.aux)
+[25]) [26] (./Thesis_template.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -997,23 +1000,23 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Thesis_template.out' has not changed.
-(rerunfilecheck)             Checksum: DEE3AA799E4AC49A61B452FA73B63716;4263.
+(rerunfilecheck)             Checksum: 4311D559EE2214623ED556D6D9B13C05;4959.
 Package rerunfilecheck Info: File `Thesis_template.brf' has not changed.
-(rerunfilecheck)             Checksum: A7B3026491DC95C171ED262E87CCD591;1884.
+(rerunfilecheck)             Checksum: 8F764309E09B6621D8853F729C317054;1884.
  ) 
 Here is how much of TeX's memory you used:
- 24027 strings out of 478287
- 416179 string characters out of 5849289
- 798225 words of memory out of 5000000
- 41635 multiletter control sequences out of 15000+600000
+ 24099 strings out of 478287
+ 417198 string characters out of 5849289
+ 802468 words of memory out of 5000000
+ 41681 multiletter control sequences out of 15000+600000
  477059 words of font info for 56 fonts, out of 8000000 for 9000
  1147 hyphenation exceptions out of 8191
- 125i,12n,120p,1233b,550s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on Thesis_template.pdf (32 pages, 1624127 bytes).
+ 125i,12n,120p,1233b,775s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on Thesis_template.pdf (35 pages, 1753893 bytes).
 PDF statistics:
- 640 PDF objects out of 1000 (max. 8388607)
- 564 compressed objects within 6 object streams
- 149 named destinations out of 1000 (max. 500000)
- 249 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 721 PDF objects out of 1000 (max. 8388607)
+ 633 compressed objects within 7 object streams
+ 174 named destinations out of 1000 (max. 500000)
+ 278 words of extra memory for PDF output out of 10000 (max. 10000000)
 

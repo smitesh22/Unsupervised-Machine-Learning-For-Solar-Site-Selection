@@ -36,6 +36,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[table]{xcolor}
 
+
 %\usepackage{layout}
 
 \setstretch{1.5}
@@ -153,6 +154,8 @@ Locations using Autoencoder and Clustering with applications in India}}
 		\acro{SOM}{Self-Organizing Map}
 		\acro{BMU}{Best Matching Unit}
 		\acro{PV}{Photo-Voltaic}
+		\acro{NASA}{National Aeronautical and Space Agency}
+		\acro{GIS}{Global Information System}
 	\end{acronym}
 
 
@@ -473,6 +476,73 @@ Locations using Autoencoder and Clustering with applications in India}}
 	However, given the data's diversity and high dimensionality, it's essential to reduce its dimensionality and integrate our data from various sources before applying the clustering techniques.
 
 	\section{Data Cleaning and Preprocessing}
+
+	\subsection{Terrain Data}
+		The terrain data, available as a \ac{DEM} model, boasts a spatial resolution of 30m and dimensions of \(3601 \times 3601\). Each matrix value in this model 
+		represents the elevation. Consequently, each terrain data file encompasses an area of approximately 389,016 square kilometers. Although \ac{NREL} does not provide 
+		direct slope data, it is possible to derive slope values from the elevation file. Mathematically, slope represents the rate of change of variable values. 
+		Given that we possess the adjacent elevation values and that there's a consistent 30-meter distance between these values, a function can be formulated to determine the 
+		slope values corresponding to the \ac{DEM} data file.
+
+		Algorithm below showcases the calculation of slope matrix from the given elevation matrix.
+
+		\begin{algorithm}[H]
+			\caption{Calculate Slope from Elevation matrix}
+			\begin{algorithmic}[1]
+			\REQUIRE $matrix$, $spatial\_resolution$
+			\ENSURE $slope\_matrix$
+			\STATE $rows, cols \leftarrow \text{shape}(matrix)$
+			\STATE $slope\_matrix \leftarrow \text{zeros matrix of size } (rows, cols)$
+			\FOR{$i = 1$ to $rows-2$}
+				\FOR{$j = 1$ to $cols-2$}
+					\STATE $delta\_x \leftarrow matrix[i, j+1] - matrix[i, j-1]$
+					\STATE $delta\_y \leftarrow matrix[i+1, j] - matrix[i-1, j]$
+					\STATE $distance\_x \leftarrow 2 \times spatial\_resolution$
+					\STATE $distance\_y \leftarrow 2 \times spatial\_resolution$
+					\STATE $slope\_x \leftarrow \frac{delta\_x}{distance\_x}$
+					\STATE $slope\_y \leftarrow \frac{delta\_y}{distance\_y}$
+					\STATE $slope \leftarrow \sqrt{slope\_x^2 + slope\_y^2}$
+					\STATE $slope\_matrix[i, j] \leftarrow slope$
+				\ENDFOR
+			\ENDFOR
+			\RETURN $slope\_matrix$
+			\end{algorithmic}
+		\end{algorithm}
+
+		By following the algorithm, one can obtain a matrix that provides an approximation of the slope at each cell in the DEM.
+
+		
+
+	\subsection{Solar Irradiance and Atmospheric Conditions Data}
+
+	The atmospheric conditions data, fetched from \ac{NREL}, is presented in the form of a time series for specific locations. For the model, 
+	we utilize the mean of the time series of various attributes (GHI, DHI, DNI, Clearsky DHI, Clearsky DNI, Clearsky GHI, Temperature, Relative Humidity). 
+	Essentially, we compute the mean of the time series for each location for which we have both elevation and slope data available.
+
+
+	\subsection{Other \ac{GIS} features}
+
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1\textwidth]{Figures/india_map_with_highlighted_data.png} % Adjust the width as needed
+		\caption{Map with areas highlighted that are considered for the study containing the Elevation and Slope data, solar irradiance and atmospheric conditions data and GIS information}
+		\label{fig:my_label5} % Use this label to reference the figure elsewhere
+	\end{figure}
+	
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
 	\section{Data Modelling}
 
