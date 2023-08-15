@@ -20,11 +20,12 @@
 \usepackage{graphicx}
 %\usepackage{subfigure}
 \usepackage{caption}
+\usepackage{acronym}
 \usepackage{subcaption}
 \usepackage{hyperref}
 \usepackage{tabularx}
 \usepackage{url}
-\usepackage{glossaries}
+%\usepackage{glossaries}
 \usepackage{float}
 \usepackage{longtable}
 \usepackage[pdftex]{graphicx}
@@ -81,22 +82,7 @@ Locations using Autoencoder and Clustering with applications in India}}
 
 \begin{document}
 
-\newacronym{mlp}{MLP}{Multi-Layer Perceptron}
-	\newacronym{MCDMs}{Multi-Criteria Decision-Making Methods}
-	\newacronym{AHP}{Analytical Hierarchy Process}
-	\newacronym{NREL}{National Renewable Energy Laboratory}
-	\newacronym{SRTM}{MShuttle Radar Topography Mission}
-	\newacronym{DEM}{Digital Elevation Model}
-	\newacronym{USGS}{United States Geological Survey}
-	\newacronym{OSM}{OpenStreeMap}
-	\newacronym{DNI}{Direct Normal Irradiance}
-	\newacronym{GHI}{Global Horizontal Irradiance}
-	\newacronym{NSRDB}{National Solar Irradiance Database}
-	\newacronym{CR}{Consistency Ratio}
-	\newacronym{CI}{Consistency Index}
-	\newacronym{RI}{Random Consistency Index}
-	\newacronym{SOM}{Self-Organizing Map}
-	\newacronym{BMU}{Best Matching Unit}
+
 	\begin{spacing}{1}
 		\maketitle
 	\end{spacing}
@@ -147,11 +133,32 @@ Locations using Autoencoder and Clustering with applications in India}}
 	\listoffigures
 	\listoftables
 
-	
+	\section*{Acronyms}
+	\begin{acronym}
+		\acro{MLP}{Multi-Layer Perceptron}
+		\acro{MCDMs}{Multi-Criteria Decision-Making Methods}
+		\acro{AHP}{Analytical Hierarchy Process}
+		\acro{NREL}{National Renewable Energy Laboratory}
+		\acro{SRTM}{Shuttle Radar Topography Mission} 
+		\acro{DEM}{Digital Elevation Model}
+		\acro{USGS}{United States Geological Survey}
+		\acro{OSM}{OpenStreeMap}
+		\acro{DNI}{Direct Normal Irradiance}
+		\acro{GHI}{Global Horizontal Irradiance}
+		\acro{DHI}{Direct Horizontal Irradiance}
+		\acro{NSRDB}{National Solar Irradiance Database}
+		\acro{CR}{Consistency Ratio}
+		\acro{CI}{Consistency Index}
+		\acro{RI}{Random Consistency Index}
+		\acro{SOM}{Self-Organizing Map}
+		\acro{BMU}{Best Matching Unit}
+		\acro{PV}{Photo-Voltaic}
+	\end{acronym}
 
 
 
 	\printglossary[title=List of Acronyms,type=\acronymtype]
+
 	
 	
 	\mainmatter
@@ -178,12 +185,16 @@ Locations using Autoencoder and Clustering with applications in India}}
 	prioritizes solar and hydroelectric power generation. Situated between latitudes 20.5937° N and 78.9629° E, India's temperate and tropical climate conditions ensure 
 	high solar irradiance levels.
 
-	Before pinpointing promising regions for solar farms, several factors require careful consideration: the slope gradient of the terrain, proximity to urban centers, and the presence of conservation areas. Historically, scientific studies focusing on solar PV plant installations, which leverage GIS data, have leaned towards the use of Multi-Criteria Decision-Making Methods (MCDMs) to evaluate these factors\cite{reuters2022,colak2020,garni2017,zoghi2017,saraswat2021}. These studies predominantly employed the Analytical Hierarchy Process (AHP) as their chosen MCDM technique to determine the relevant criteria. This research, however, ventures into exploring novel unsupervised learning methods. These methods draw parallels with techniques employed by researchers like Chang et al., who used them for monitoring landslide susceptibility using geospatial data\cite{chang2020}. Specifically, this study emphasizes the use of Autoencoders and clustering techniques to pinpoint regions that hold importance for the establishment of solar PV plants.
+	Before pinpointing promising regions for solar farms, several factors require careful consideration: the slope gradient of the terrain, proximity to urban centers, and the 
+	presence of conservation areas. Historically, scientific studies focusing on solar \ac{PV} plant installations, which leverage GIS data, have leaned towards the use of 
+	\ac{MCDMs} to evaluate these factors\cite{reuters2022,colak2020,garni2017,zoghi2017,saraswat2021}. These studies predominantly employed the \ac{AHP} as their chosen \ac{MCDMs} 
+	technique to determine the relevant criteria. This research, however, ventures into exploring novel unsupervised learning methods. These methods draw parallels with techniques \
+	employed by researchers like Chang et al., who used them for monitoring landslide susceptibility using geospatial data\cite{chang2020}. Specifically, this study emphasizes the 
+	use of Autoencoders and clustering techniques to pinpoint regions that hold importance for the establishment of solar \ac{PV} plants.
 
 	Although similar research has been conducted in India, many of these studies faced constraints due to the limited resolution of spatial 
-	data\cite{jain2011,saraswat2021,sindhu2017}. They also primarily relied on MCDMs for classification. The data underpinning this study is sourced from a diverse array of 
-	institutions, including the National Renewable Energy Laboratory (NREL) for solar irradiance, the Digital Elevation Model (DEM) provided by the Shuttle Radar Topography Mission 
-	(SRTM) spearheaded by the United States Geological Survey (USGS), and OpenStreetMap (OSM). The latter offers detailed insights into land use, protected reserves, water bodies, 
+	data\cite{jain2011,saraswat2021,sindhu2017}. They also primarily relied on \ac{MCDMs} for classification. The data underpinning this study is sourced from a diverse array of 
+	institutions, including the \ac{NREL} for solar irradiance, the \ac{DEM} provided by the \ac{SRTM} spearheaded by the \ac{USGS}, and \ac{OSM}. The latter offers detailed insights into land use, protected reserves, water bodies, 
 	urban centers, and transportation networks.
 
 	
@@ -196,34 +207,34 @@ Locations using Autoencoder and Clustering with applications in India}}
 		
 		\item While prior studies on solar PV site selection in India were conducted with a limited scope, often relying on data with low spatial resolution (greater than 1000 meters), this research aims to leverage datasets with superior spatial resolution (ranging from less than 10 meters to 30 meters).
 		
-		\item To the student's best knowledge, no previous studies have employed self-supervised Autoencoder and clustering based classification for PV sites on such a comprehensive scale.
+		\item To the student's best knowledge, no previous studies have employed self-supervised Autoencoder and clustering based classification for \ac{PV} sites on such a comprehensive scale.
 	\end{enumerate}
 
 	\section{Research Questions}
 
 	\begin{enumerate}
-		\item Can self-supervised learning techniques and clustering yield better results than MCDMs when using higher spatial resolution data?
-		\item Given the vast and varied sources of data (e.g., NREL, DEM from SRTM, OSM), how can they be effectively integrated to yield the most comprehensive insights for solar site selection?
+		\item Can self-supervised learning techniques and clustering yield better results than \ac{MCDMs} when using higher spatial resolution data?
+		\item Given the vast and varied sources of data (e.g., \ac{NREL}, \ac{DEM} from \ac{SRTM}, \ac{OSM}), how can they be effectively integrated to yield the most comprehensive insights for solar site selection?
 	\end{enumerate}
 
 	\chapter{Background and Related Work}
 	
 	\section{Criteria and Factors Affecting Decision-making}
 
-	Selecting the right features for predictive models is a pivotal step in making informed decisions about the feasibility of specific geolocations for solar PV plants. There have been numerous studies undertaken by researchers to determine the critical factors for classifying PV solar plant sites.
+	Selecting the right features for predictive models is a pivotal step in making informed decisions about the feasibility of specific geolocations for solar \ac{PV} plants. There have been numerous studies undertaken by researchers to determine the critical factors for classifying \ac{PV} solar plant sites.
 
 	Colak et al.\ conducted a study to identify suitable locations for establishing photovoltaic power plants in the Malatya province of Turkey\cite{colak2020}. The authors employed 11 layers of GIS data to pinpoint the most favorable sites. These layers encapsulated various factors that influence the decision-making process, such as:
 
 	\begin{enumerate}
 		\item \textbf{Solar Energy Potential:} Gauging the solar potential of a region is paramount. This metric essentially dictates the energy yield of a region when equipped with a photovoltaic power plant.
 		
-		\item \textbf{Slope:} The terrain's slope plays a crucial role in the decision-making process. A more level terrain is preferred for the installation of PV panels, ensuring optimal exposure and ease of maintenance.
+		\item \textbf{Slope:} The terrain's slope plays a crucial role in the decision-making process. A more level terrain is preferred for the installation of \ac{PV} panels, ensuring optimal exposure and ease of maintenance.
 		
 		\item \textbf{Transformer Centers and Energy Transmission:} Transmitting electricity over vast distances without the appropriate energy infrastructure results in significant energy losses. Hence, having a power transmission system in place is crucial when considering a location for a new plant.
 		
 		\item \textbf{Land Cover:} Certain lands designated as nature reserves, tribal habitats, or for other specific purposes are legally off-limits for energy generation activities. It's imperative to factor in these designations when choosing a site.
 		
-		\item \textbf{Residential Areas:} Constructing a solar plant near an urban center might pose future challenges, especially with the continuous expansion of urban sprawl. Conversely, having a PV solar plant in proximity to urban centers can mitigate transmission losses. This duality necessitates a balanced consideration.
+		\item \textbf{Residential Areas:} Constructing a solar plant near an urban center might pose future challenges, especially with the continuous expansion of urban sprawl. Conversely, having a \ac{PV} solar plant in proximity to urban centers can mitigate transmission losses. This duality necessitates a balanced consideration.
 	\end{enumerate}
 
 	For data preprocessing, various hardset conditions were set to restrict certain areas like slope elevation of land cannot be more than 20 percent,
@@ -256,19 +267,19 @@ Locations using Autoencoder and Clustering with applications in India}}
 		\item \textbf{Climatic:} Sunshine, Cloudy Days, Dusty Days, Solar Radiation, Rainy and Snowy Days, and Humidity.
 	\end{enumerate}
 
-	The study carried out by Saraswat et al. (2021) represents the most elaborate case study for site selection of solar PV plants in India, 
+	The study carried out by Saraswat et al. (2021) represents the most elaborate case study for site selection of solar \ac{PV} plants in India, 
 	to the best of the student's knowledge\cite{saraswat2021}. A significant limitation of this study is the data's spatial resolution. With a resolution of 
 	around 1000m, it is not well-suited for detailed DEM modeling and other attributes. Consequently, the solar farm suitability map produced in this study lacks
-	 granularity at a spatial level. However, various databases, provided by USGS and NREL, offer spatial resolutions of 30m and can be employed to yield more accurate predictions.
+	 granularity at a spatial level. However, various databases, provided by USGS and \ac{NREL}, offer spatial resolutions of 30m and can be employed to yield more accurate predictions.
 
-	Data for the study were sourced from multiple governmental bodies: NREL for solar radiation, DIVA-GIS for roads and inland water bodies, and the DEM model was provided by the United States Geological Survey (USGS). The factors were segmented into three categories: technical, socio-environmental, and economic.
+	Data for the study were sourced from multiple governmental bodies: \ac{NREL} for solar radiation, DIVA-GIS for roads and inland water bodies, and the DEM model was provided by the United States Geological Survey (USGS). The factors were segmented into three categories: technical, socio-environmental, and economic.
 	\begin{enumerate}
 		\item \textbf{Technical:} Solar Radiation, Slope, Aspect, and Elevation.
 		\item \textbf{Socio-Environmental:} Distance from coastline, Distance from water bodies, airports, and Land use.
 		\item \textbf{Economic:} Distance from urban areas, roads, transmission lines, and power plants.
 	\end{enumerate}
 
-	\section{Data Gathering and Pre-Processing}
+	\section{Data Sources and Overview}
 
 	For this project, we required multiple layers of GIS data that would serve as essential features for identifying suitable locations for solar farms. 
 	Terrain information is a pivotal feature for this study. To set up a solar farm, vast expanses of land with minimal elevation changes are necessary. 
@@ -286,8 +297,8 @@ Locations using Autoencoder and Clustering with applications in India}}
 
 	\subsection{Terrain Data}
 
-	The USGS (United States Geological Survey) is an agency of the United States government that operates across disciplines such as geology, geography, and hydrology. 
-	The SRTM (Shuttle Radar Topography Mission) was undertaken in collaboration with NASA (National Aeronautics and Space Agency) to create digital elevation models (DEM) 
+	The \ac{USGS}) is an agency of the United States government that operates across disciplines such as geology, geography, and hydrology. 
+	The \ac{SRTM} was undertaken in collaboration with \ac{NASA} to create \ac{DEM} 
 	of the earth's surface. This effort produced two Digital Elevation Models available for research, with spatial resolutions of 1 arc-second (30 meters) and 3 arc-second 
 	(90 meters). For this study, we will be using the DEM model with a 1 arc-second spatial resolution\cite{farr2000}.
 
@@ -300,17 +311,17 @@ Locations using Autoencoder and Clustering with applications in India}}
 
 	\subsection{ Solar Irradiance Data}
 
-	The National Solar Irradiance Database (NSRDB) provides a comprehensive collection of solar irradiance data. This database, which is calculated on both hourly and 
-	half-hourly bases, is maintained by the National Renewable Energy Laboratory (NREL), the U.S. Department of Energy, and various other contributors\cite{sengupta2018}. 
+	The \ac{NSRDB} provides a comprehensive collection of solar irradiance data. This database, which is calculated on both hourly and 
+	half-hourly bases, is maintained by the \ac{NREL}, the U.S. Department of Energy, and various other contributors\cite{sengupta2018}. 
 
 	Solar irradiance is characterized by three distinct measurements:
 
 	\begin{itemize}
-		\item \textbf{Global Horizontal Irradiance (GHI):} This refers to the total amount of solar radiation received per unit area on the Earth's surface. It is a cumulative measure that encompasses diffuse horizontal irradiance, ground-reflected radiation, and diffuse sky radiation.
+		\item \textbf{\ac{GHI}:} This refers to the total amount of solar radiation received per unit area on the Earth's surface. It is a cumulative measure that encompasses diffuse horizontal irradiance, ground-reflected radiation, and diffuse sky radiation.
 		
-		\item \textbf{Direct Normal Irradiance (DNI):} DNI indicates the amount of solar radiation received per unit area on a surface that is perpendicular to the sun rays incident on that surface.
+		\item \textbf{\ac{DNI}:} \ac{DNI} indicates the amount of solar radiation received per unit area on a surface that is perpendicular to the sun rays incident on that surface.
 		
-		\item \textbf{Diffuse Horizontal Irradiance (DHI):} This measurement pertains to the solar radiation that is scattered from the sky, excluding the direct solar beam.
+		\item \textbf{\ac{DHI}:} This measurement pertains to the solar radiation that is scattered from the sky, excluding the direct solar beam.
 	\end{itemize}
 
 	\begin{figure}[H]
@@ -343,7 +354,7 @@ Locations using Autoencoder and Clustering with applications in India}}
 		\item \textbf{Skilled Labor:} The availability of trained professionals and workers in the vicinity can have a bearing on the feasibility of the project.
 	\end{itemize}
 
-	OpenStreetMap (OSM) is an open-source collaborative project initiated in 2004, with the objective of creating free geographic data. Over the years, 
+	\ac{OSM} is an open-source collaborative project initiated in 2004, with the objective of creating free geographic data. Over the years, 
 	it has evolved into a global community-driven initiative. The maps and data generated by OSM collaborators can be leveraged for various attributes required 
 	for such projects~\cite{openstreetmap2017}.
 	\begin{figure}[H]
@@ -355,14 +366,14 @@ Locations using Autoencoder and Clustering with applications in India}}
 
 	\section{Analytical Hierarchical Process}
 
-	Multi-Criteria Decision Making methods (MCDMs) have been extensively employed in literature for identifying optimal solar PV plant sites. 
-	Unlike machine learning techniques, which automatically learn biases without being explicitly programmed, MCDMs primarily focus on decision-making based on predefined criteria. 
+	\ac{MCDMs} have been extensively employed in literature for identifying optimal solar PV plant sites. 
+	Unlike machine learning techniques, which automatically learn biases without being explicitly programmed, \ac{MCDMs} primarily focus on decision-making based on predefined criteria. 
 	These criteria are often ranked manually to guide decision-making processes.
 
-	Analytic Hierarchy Process (AHP) is a widely recognized MCDM, as attested by numerous literary sources\cite{colak2020,saraswat2021,garni2017,zoghi2017}. 
-	AHP was pioneered by Prof. Thomas Saaty\cite{saaty1988}. At its core, AHP emphasizes ranking criteria that influence the decision-making process. 
+	\ac{AHP} is a widely recognized \ac{MCDMs} technique, as attested by numerous literary sources\cite{colak2020,saraswat2021,garni2017,zoghi2017}. 
+	\ac{AHP} was pioneered by Prof. Thomas Saaty\cite{saaty1988}. At its core, \ac{AHP} emphasizes ranking criteria that influence the decision-making process. 
 
-	The methodology of AHP can be distilled into three stages:
+	The methodology of \ac{AHP} can be distilled into three stages:
 
 	\begin{enumerate}
 		\item \textbf{Problem Definition and Hierarchy Creation:} Begin by clearly outlining the problem. For the context of this study, the objective is to assess the suitability of a location for a solar PV plant. A hierarchy is then defined based on relevant criteria or factors, which in this instance might encompass aspects like elevation, slope, solar irradiance, land use, and land value.
@@ -393,7 +404,7 @@ Locations using Autoencoder and Clustering with applications in India}}
 
 	\section{Kohonen's Model}
 
-	The Kohonen model, also known as the Kohonen neural network or Self-Organizing Map (SOM), is an unsupervised clustering algorithm. It was introduced by Kohonen et al. 
+	The Kohonen model, also known as the Kohonen neural network or \ac{SOM}, is an unsupervised clustering algorithm. It was introduced by Kohonen et al. 
 	in 1982\cite{kohonen1982}. Typically, it is employed for clustering tasks. Notably, Chang et al. utilized it extensively to identify locations with high landslide susceptibility
 	\cite{chang2020}.
 
@@ -403,7 +414,7 @@ Locations using Autoencoder and Clustering with applications in India}}
 
 	Initially, all the weight vectors of the neurons are initialized with random values drawn from a normal distribution. Iteratively, input vectors are selected from the 
 	training data. To compute the proximity of the input vector to the weighted vector, a distance or similarity metric, such as the Euclidean distance or cosine similarity, 
-	is employed. The Best Matching Unit (BMU) is the neuron whose weight vector most closely matches the input vector. Subsequently, the weights of the neurons are updated to 
+	is employed. The \ac{BMU} is the neuron whose weight vector most closely matches the input vector. Subsequently, the weights of the neurons are updated to 
 	align more closely with the selected input vector. This process continues iteratively until convergence.
 
 	Upon completion of the training phase, the Kohonen model produces a lower-dimensional vector space representation of the input data. The number of neurons in the model 
@@ -422,101 +433,64 @@ Locations using Autoencoder and Clustering with applications in India}}
 		\label{fig:my_label8} % Use this label to reference the figure elsewhere
 	\end{figure}
 
-	They employed a hybrid model combining a Multi-Layer Perceptron (MLP) and an Auto-Encoder. The Auto-Encoder is a type of neural network architecture proposed by 
+	They employed a hybrid model combining a \ac{MLP} and an Auto-Encoder. The Auto-Encoder is a type of neural network architecture proposed by 
 	Hinton and Rumelhart~\cite{rumelhart1986}. It comprises an encoder and a decoder, which collaboratively work to diminish the dimensionality of the input vector, 
 	representing it in a more condensed vector space known as the latent space. In this setup, the Auto-Encoder functions primarily as a feature extractor. 
-	The extracted features are subsequently used to train an MLP for making predictions.
+	The extracted features are subsequently used to train an \ac{MLP} for making predictions.
 
 	An auto-encoder essentially operates as a neural network aiming to recreate its input. Structurally, it is segmented into three main components:
 
 	\begin{enumerate}
-		\item \textbf{Encoder:} It compresses the data into a lower-dimensional vector space. The encoder uses a neural network with transformational layers such as fully connected, convolutional, and dropout layers.
+		\item \textbf{Encoder:} It compresses the data into a lower-dimensional vector space. The encoder uses a neural network with transformational layers such as fully connected,
+		 convolutional, and dropout layers.
 		
-		\item \textbf{Latent Space:} This represents the compressed version of the input vector produced by the encoder. Serving as a bottleneck, it retains the core features of the data.
+		\item \textbf{Latent Space:} This represents the compressed version of the input vector produced by the encoder. Serving as a bottleneck, it retains the core features of
+		 the data.
 		
-		\item \textbf{Decoder:} This component of the neural network endeavors to reconstruct the original input vector. Its primary function lies in computing the reconstruction cost.
+		\item \textbf{Decoder:} This component of the neural network endeavors to reconstruct the original input vector. Its primary function lies in computing 
+		the reconstruction cost.
 	\end{enumerate}
 
 	During the training process of an auto-encoder, the decoder's output is juxtaposed with the original input. The discrepancy in the reconstructed output is termed as the reconstruction error. 
 	This error is minimized using the backpropagation algorithm until convergence is achieved. Once trained, the encoder can then be utilized to produce a lower-dimensional 
 	representation of the data, which can be harnessed for various machine learning tasks.
 
-	\chapter{Related Work}
-	\label{chap:rel_work}
-	
-	The Related Work (a.k.a. Literature Review) chapter provides a survey of scholarly articles, conference papers, books and other existing works relevant to the topic of your thesis. It provides context for your own research, allows to identify the state-of-the-art (current knowledge about the matter of the thesis) and a ``gap'' in existing research your thesis aims to close.\\
-	
-	It should stick to strongly relevant and high-quality papers and articles. 
-	
-	Learn to recognise and avoid spam/predatory/pay-to-publish/vanity journals and conferences. Use newspaper/magazine/blog/tutorial sources only very rarely and only if truly unavoidable. Cite the originator of an idea, not a random author who used it recently.
-	
-	If you paste any text from any source, you must quote and cite. If you paste any text and then alter it to avoid quoting and citing, delete it and ask your supervisor for advice on how to avoid plagiarism.
-	
-	Remember that ideas, concepts, images, data sets, program code, algorithms, approaches, methods, etc. not created by yourself also must be properly referenced. \\
-	
-	The Related Work chapter should be synthetic, that is it should identify common themes and issues and connections between papers to form a larger-scale understanding. It should help the reader by giving a taxonomy or categorisation of existing work, i.e.~it should not be a bare list of papers. It should demonstrate critical thinking and judgement, not just rephrase what previous authors have claimed. \\
-	
-	
-	\textbf{Carefully familiarize yourself with the referencing style (bibliography style) you are planning to use.} Unless a different referencing style is stipulated by your supervisor, it is strongly recommended to use \textbf{IEEE style} (as usual in Computer Science):\\ \verb#https://libguides.ncirl.ie/referencingandavoidingplagiarism/ieee#\\
-	
-	\noindent Also familiarize yourself with BibTeX (see below).\\
-	
-	\noindent For citations, use \verb#\cite# commands. Example:\\
-	\verb#Community detection in graphs is an interesting problem \cite{NewmanGirvan2004}.#
-	will appear as\\
-	Community detection in graphs is an interesting problem \cite{NewmanGirvan2004}.
-	
-	\noindent To include page numbers (for direct quotes, or when referencing content in books or long articles), use, e.g.,\\ \noindent \verb#\cite[p.~22]{NewmanGirvan2004}# (appears as \cite[p.~22]{NewmanGirvan2004}).
-	
-	\noindent To combine multiple references, separate the citation-keys by commas, e.g.,\\ 
-	\noindent \verb#\cite{NewmanGirvan2004,DBLP:books/aw/RN2020}#, which will appear as \cite{NewmanGirvan2004,DBLP:books/aw/RN2020}.\\
-	
-	\noindent Do not write paper titles, e.g.~do not write {\em In a paper titled ``Community Detection in Graphs''}. Just cite.\\
-	
-	%There are two styles, depending on your sentence:
-	%\begin{itemize}
-	%\item Parenthetical \verb+\citep{NewmanGirvan2004}+: Community detection in graphs is an interesting problem \citep{NewmanGirvan2004}.
-	%\item Textual \verb+\citet{NewmanGirvan2004}+: It was shown by \citet{NewmanGirvan2004} that community detection in graphs is an interesting problem.
-	%\end{itemize}
-	
-	\textbf{It is strongly recommended to use BibTeX for references.} Add all your bibliography items (such as papers, articles, books, web pages...) to file references.bib. BibTeX items for articles, books and papers can often be found on the Web (but you still need to check their correctness and completeness, and amend them if necessary). A good tutorial about BibTeX is\\
-	\verb#https://www.overleaf.com/learn/latex/Bibliography_management_with_bibtex#
-	
 	\chapter{Methodology}
 	\label{chap:methodology}
+
+	For the task at hand, a novel methodology is proposed in this project. The features considered for this task, as mentioned in Section 2.2[Data Sources and Overview], 
+	can be subdivided into three classes:
+
+	\begin{enumerate}
+		\item \textbf{Terrain Information:} In this case, the elevation model, denoted by \ac{DEM}, was readily available from the \ac{SRTM} mission undertaken by \ac{USGS}. This data, with a spatial resolution of 30m, is superior to the data used in previous studies by other authors. Additionally, the slope of the terrain is another crucial factor. The slope determines the amount of solar irradiance incident on the surface of the \ac{PV} cells. Furthermore, a steep slope would not be suitable for a solar \ac{PV} farm.
+		
+		\item \textbf{Solar Irradiance and Atmospheric Conditions:} These were sourced from \ac{NREL}. They play a pivotal role in identifying suitable locations. Specifically, a region with high solar irradiance, minimal overcast conditions, and high temperatures would be ideal.
+		
+		\item \textbf{Other Features:} For this project, we also considered \ac{GIS} layers from the \ac{OSM} dataset. This includes features such as railways, roadways, land use, landmarks, and urban areas.
+	\end{enumerate}
 	
-	Here you describe your approach to your research, and your reasoning behind your approach.\\
-	
-	For example, what kind of data did you use, and why is this data appropriate? How was the data collected, sampled or generated, and why is this approach appropriate? What methods did you use to analyse your data, and why are those methods appropriate?\\
-	
-	What models, algorithms, code, frameworks or tools did you use or create? Describe them, and justify your choices and designs. \\
-	
-	In this and the remaining chapters, relate, where appropriate, the approaches you used, the decisions you made and the results you obtained to your Research Questions from the Introduction. E.g., ``To answer RQ1, we firstly trained a Convolutional Neural Network using a large set of cat images...''.
-	
-	\chapter{Data}
-	\label{chap:data}
-	
-	You might need a chapter (or, alternatively, a section within ``Methodology'') about your data and pre-processing. This chapter is particularly relevant if you are using a dataset that has not been previously described in detail. But if you do not use this chapter, you still need to describe all datasets you are using (e.g., in chapter Methodology).
+	The primary objective here is to employ K-means clustering to create clusters and identify the most suitable ones based on locations that already contain a solar PV plant within the appropriate cluster. 
+	However, given the data's diversity and high dimensionality, it's essential to reduce its dimensionality and integrate our data from various sources before applying the clustering techniques.
+
+	\section{Data Cleaning and Preprocessing}
+
+	\section{Data Modelling}
+
+	\section{Algorithm}
+	\subsection{AutoEncoder}
+	\subsection{Clustering}
+
 	
 	\chapter{Experiments}
-	\label{chap:experiments}
-	
-	Give a complete technical description of your experiments, sufficient for another researcher to understand your experimental approach and reproduce your results. \\
-	
-	\noindent (Note that experimental results belong in the next chapter.) 
-	
-	\chapter{Results}
-	\label{chap:results}
-	
-	Results first, using figures and tables, with little commentary and no interpretation.
-	
-	
-	\noindent Then analysis and interpretation.\\
-	
-	\textbf{Link experimental results to your research questions}, e.g., ``Summing up, the results in Table 3 clearly show that the answer to RQ2 is negative ...''.
-	
+
+	\section{Experiments}
+	\section{Results}
+
 	\chapter{Conclusion}
 	\label{chap:conclusion}
+	\section{Future Scope}
+	\section{Conclusion}
+
 	
 	Here you must zoom back out to evaluate the thesis. Mention limitations and weaknesses as well as contributions and possible future work.
 	

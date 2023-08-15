@@ -5,17 +5,23 @@
 \contentsline {section}{\numberline {1.3}Research Questions}{3}{section.1.3}%
 \contentsline {chapter}{\numberline {2}Background and Related Work}{4}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Criteria and Factors Affecting Decision-making}{4}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Data Gathering and Pre-Processing}{7}{section.2.2}%
+\contentsline {section}{\numberline {2.2}Data Sources and Overview}{7}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Terrain Data}{8}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2} Solar Irradiance Data}{9}{subsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.2.3}Other Important Attributes}{11}{subsection.2.2.3}%
 \contentsline {section}{\numberline {2.3}Analytical Hierarchical Process}{12}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Kohonen's Model}{14}{section.2.4}%
 \contentsline {section}{\numberline {2.5}Auto Encoder and Multi-Layer Perceptron}{15}{section.2.5}%
-\contentsline {chapter}{\numberline {3}Related Work}{17}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Methodology}{20}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Data}{21}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Experiments}{22}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Results}{23}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Conclusion}{24}{chapter.8}%
-\contentsline {chapter}{References}{27}{chapter*.11}%
+\contentsline {chapter}{\numberline {3}Methodology}{17}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Data Cleaning and Preprocessing}{18}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Data Modelling}{18}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Algorithm}{18}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}AutoEncoder}{18}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Clustering}{18}{subsection.3.3.2}%
+\contentsline {chapter}{\numberline {4}Experiments}{19}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Experiments}{19}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Results}{19}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Conclusion}{20}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Future Scope}{20}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Conclusion}{20}{section.5.2}%
+\contentsline {chapter}{References}{23}{chapter*.29}%

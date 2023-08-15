@@ -22,6 +22,39 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem[Colak et~al.(2020)Colak, Memisoglu, and Gercek]{colak2020}
+\BIBentryALTinterwordspacing
+H.~E. Colak, T.~Memisoglu, and Y.~Gercek, ``Optimal site selection for solar
+  photovoltaic (pv) power plants using gis and ahp: A case study of malatya
+  province, turkey,'' \emph{Renewable Energy}, vol. 149, pp. 565--576, Apr
+  2020. [Online]. Available: \url{https://doi.org/10.1016/j.renene.2019.12.078}
+\BIBentrySTDinterwordspacing
+
+\bibitem[Saraswat et~al.(2021)Saraswat, Digalwar, Yadav, and
+  Kumar]{saraswat2021}
+\BIBentryALTinterwordspacing
+S.~Saraswat, A.~K. Digalwar, S.~Yadav, and G.~Kumar, ``Mcdm and gis based
+  modelling technique for assessment of solar and wind farm locations in
+  india,'' \emph{Renewable Energy}, vol. 169, pp. 865--884, May 2021. [Online].
+  Available: \url{https://doi.org/10.1016/j.renene.2021.01.056}
+\BIBentrySTDinterwordspacing
+
+\bibitem[Vignola et~al.(2023)Vignola, Michalsky, and Stoffel]{vignola2023}
+F.~Vignola, J.~Michalsky, and T.~Stoffel, \emph{Solar and Infrared Radiation
+  Measurements}, 2nd~ed.\hskip 1em plus 0.5em minus 0.4em\relax CRC Press,
+  2023.
+
+\bibitem[Ahmadlou et~al.(2020)Ahmadlou, Al-Fugara, Al-Shabeeb, Arora,
+  Al-Adamat, Pham, Al-Ansari, Linh, and Sajedi]{ahmadlou2020}
+\BIBentryALTinterwordspacing
+M.~Ahmadlou, A.~Al-Fugara, A.~R. Al-Shabeeb, A.~Arora, R.~Al-Adamat, Q.~B.
+  Pham, N.~Al-Ansari, N.~T.~T. Linh, and H.~Sajedi, ``Flood susceptibility
+  mapping and assessment using a novel deep learning model combining multilayer
+  perceptron and autoencoder neural networks,'' \emph{Journal of Flood Risk
+  Management}, vol.~14, no.~1, Dec 2020. [Online]. Available:
+  \url{https://doi.org/10.1111/jfr3.12683}
+\BIBentrySTDinterwordspacing
+
 \bibitem[BP(2021)]{bp2021}
 BP. (2021) Bp statistical review of world energy 2021. Available at :
   http://www.indiaenvironmentportal.org.in/files/file/bp%20statistical%20review%20of%20world%20energy%202021.pdf.
@@ -39,14 +72,6 @@ Reuters. (2022, Dec) India's solar boom reverses gas momentum, cements coal
   \url{https://www.reuters.com/world/india/indias-solar-boom-reverses-gas-momentum-cements-coal-use-maguire-2022-12-14/}
 \BIBentrySTDinterwordspacing
 
-\bibitem[Colak et~al.(2020)Colak, Memisoglu, and Gercek]{colak2020}
-\BIBentryALTinterwordspacing
-H.~E. Colak, T.~Memisoglu, and Y.~Gercek, ``Optimal site selection for solar
-  photovoltaic (pv) power plants using gis and ahp: A case study of malatya
-  province, turkey,'' \emph{Renewable Energy}, vol. 149, pp. 565--576, Apr
-  2020. [Online]. Available: \url{https://doi.org/10.1016/j.renene.2019.12.078}
-\BIBentrySTDinterwordspacing
-
 \bibitem[Garni and Awasthi(2017)]{garni2017}
 \BIBentryALTinterwordspacing
 H.~Z.~A. Garni and A.~Awasthi, ``Solar pv power plant site selection using a
@@ -62,15 +87,6 @@ M.~Zoghi, A.~H. Ehsani, M.~Sadat, M.~j. Amiri, and S.~Karimi, ``Optimization
   method in arid and semi-arid region: A case study isfahan-iran,''
   \emph{Renewable and Sustainable Energy Reviews}, vol.~68, pp. 986--996, Feb
   2017. [Online]. Available: \url{https://doi.org/10.1016/j.rser.2015.07.014}
-\BIBentrySTDinterwordspacing
-
-\bibitem[Saraswat et~al.(2021)Saraswat, Digalwar, Yadav, and
-  Kumar]{saraswat2021}
-\BIBentryALTinterwordspacing
-S.~Saraswat, A.~K. Digalwar, S.~Yadav, and G.~Kumar, ``Mcdm and gis based
-  modelling technique for assessment of solar and wind farm locations in
-  india,'' \emph{Renewable Energy}, vol. 169, pp. 865--884, May 2021. [Online].
-  Available: \url{https://doi.org/10.1016/j.renene.2021.01.056}
 \BIBentrySTDinterwordspacing
 
 \bibitem[Chang et~al.(2020)Chang, Du, Zhang, Huang, Chen, Li, and
@@ -110,11 +126,6 @@ M.~Sengupta, Y.~Xie, A.~Lopez, A.~Habte, G.~Maclaurin, and J.~Shelby, ``The
   national solar radiation data base (nsrdb),'' \emph{Renewable and Sustainable
   Energy Reviews}, vol.~89, pp. 51--60, 2018.
 
-\bibitem[Vignola et~al.(2023)Vignola, Michalsky, and Stoffel]{vignola2023}
-F.~Vignola, J.~Michalsky, and T.~Stoffel, \emph{Solar and Infrared Radiation
-  Measurements}, 2nd~ed.\hskip 1em plus 0.5em minus 0.4em\relax CRC Press,
-  2023.
-
 \bibitem[contributors(2017)]{openstreetmap2017}
 \BIBentryALTinterwordspacing
 O.~contributors. (2017) Planet dump retrieved from https://planet.osm.org.
@@ -133,17 +144,6 @@ T.~L. Saaty, \emph{What is the analytic hierarchy process?}\hskip 1em plus
 T.~Kohonen, ``Self-organized formation of topologically correct feature maps,''
   \emph{Biological Cybernetics}, vol.~43, no.~1, pp. 59--69, 1982. [Online].
   Available: \url{https://doi.org/10.1007/bf00337288}
-\BIBentrySTDinterwordspacing
-
-\bibitem[Ahmadlou et~al.(2020)Ahmadlou, Al-Fugara, Al-Shabeeb, Arora,
-  Al-Adamat, Pham, Al-Ansari, Linh, and Sajedi]{ahmadlou2020}
-\BIBentryALTinterwordspacing
-M.~Ahmadlou, A.~Al-Fugara, A.~R. Al-Shabeeb, A.~Arora, R.~Al-Adamat, Q.~B.
-  Pham, N.~Al-Ansari, N.~T.~T. Linh, and H.~Sajedi, ``Flood susceptibility
-  mapping and assessment using a novel deep learning model combining multilayer
-  perceptron and autoencoder neural networks,'' \emph{Journal of Flood Risk
-  Management}, vol.~14, no.~1, Dec 2020. [Online]. Available:
-  \url{https://doi.org/10.1111/jfr3.12683}
 \BIBentrySTDinterwordspacing
 
 \bibitem[Rumelhart et~al.(1986)Rumelhart, Hinton, and Williams]{rumelhart1986}
