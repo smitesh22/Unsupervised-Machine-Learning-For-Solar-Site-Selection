@@ -475,7 +475,7 @@ Locations using Autoencoder and Clustering with applications in India}}
 	The primary objective here is to employ K-means clustering to create clusters and identify the most suitable ones based on locations that already contain a solar PV plant within the appropriate cluster. 
 	However, given the data's diversity and high dimensionality, it's essential to reduce its dimensionality and integrate our data from various sources before applying the clustering techniques.
 
-	\section{Data Cleaning and Preprocessing}
+	\section{Data Modelling and Preprocessing}
 
 	\subsection{Terrain Data}
 		The terrain data, available as a \ac{DEM} model, boasts a spatial resolution of 30m and dimensions of \(3601 \times 3601\). Each matrix value in this model 
@@ -521,31 +521,69 @@ Locations using Autoencoder and Clustering with applications in India}}
 
 
 	\subsection{Other \ac{GIS} features}
+	
+	The \ac{GIS} encompasses features such as railways, roadways, land use, landmarks, and urban areas. These features are represented as shapefiles, which comprise polygons 
+	mapped onto a coordinate system. These polygons facilitate the assignment of specific characteristics to designated areas. After utilizing the terrain data and atmospheric 
+	condition attributes for clustering, we will leverage the \ac{GIS} features to develop a rule-based classifier. This classifier aims to subset land based on the polygon values 
+	from the \ac{GIS} layers, as detailed in the associated table.
+
+	{\scriptsize
+	\begin{longtable}{|p{2cm}|p{12cm}|p{2cm}|}
+		\caption{Spatial Data Classification} \\
+		\hline
+		\textbf{Category} & \textbf{Occupied space for a purpose, cannot be used for solar pv plants} & \textbf{Unoccupied/ Vacant can be used} \\
+		\hline
+		\endfirsthead
+		\multicolumn{3}{c}%
+		{{\bfseries \tablename\ \thetable{} -- continued from previous page}} \\
+		\hline 
+		\textbf{Category} & \textbf{Occupied space for a purpose} & \textbf{Unoccupied/ Vacant can be used} \\
+		\hline 
+		\endhead
+		
+		\hline \multicolumn{3}{|r|}{{Continued on next page}} \\ \hline
+		\endfoot
+		
+		\hline
+		\endlastfoot
+		
+		Buildings & place\_of\_worship, parking, hotel, apartments, commercial, tower, train\_station, hospital, house, university, dormitory, school, college, residential, industrial, bungalow, civic, attraction, transportation, storage\_tank, cinema, stadium, service, depot, church, building, temple, fire\_station, library, bank, public, retail, ruins, office, police, terrace, canteen, cafe, collapsed, mosque, restaurant, bus\_station, memorial, construction, public\_building, sports\_centre, hostel, garage, supermarket, roof, toilets, hut, central\_office, apartment, mall, wall, theatre, shed, detached, courthouse, clinic, workshop, fuel, cabin, post\_office, marketplace, childcare, warehouse, community\_centre, water\_tower, fast\_food, manufacture, blood\_bank, events\_venue, townhall, part, prep\_school, guest\_house, social\_facility, gallery, arts\_centre, kindergarten, yes,\_hotel,\_comm, hangar, yes, bar, ferry\_terminal, greenhouse, fort, chapel, works, factory, shop, shelter, stage, city\_gate, tomb, veterinary, lighthouse, car\_wash, pumping\_station, outdoor, motorcycle\_parki, social\_centre, clubhouse, motel, substation, food\_court, stupa, government, pier, cowshed, aquarium, pharmacy & undefined, nan, vacant \\
+		\hline
+		landuse & commercial, retail, residential, recreation\_groun, railway, salt\_pond, grass, industrial, military, cemetery, plant\_nursery, farmland, construction, basin, garages, quarry, reservoir, saltpond, brownfield, landfill, religious, allotments, yes, green, orchard, garden, village\_green, education, farmyard, aquaculture, parking, used by school a & barren, meadow, vacant, greenfield \\
+		\hline
+		places & city, neighbourhood, locality, suburb, hamlet, village, town, island, yes, farm, plot, borough & None \\
+		\hline
+		railway & rail, platform, subway, miniature, monorail, construction, platform\_edge, traverser, workshop, turntable, proposed & abandoned, disused \\
+		\hline
+		natural & water, forest, park & - \\
+		\hline
+		waterways & drain, river, stream, dam, weir, canal, dock & unclassified \\
+		\hline
+		road & residential, motorway, tertiary, service, trunk, path, secondary, primary, living\_street, construction, footway, primary\_link, track, motorway\_link, trunk\_link, steps, pedestrian, secondary\_link, tertiary\_link, bridleway, proposed, cycleway, elevator, bus\_stop, services & - \\
+		\hline
+		points & switch, station, level\_crossing, stop, traffic\_signals, hotel, clinic, crossing, school, parking, mini\_roundabout, bus\_stop, hospital, restaurant, place\_of\_worship, motorway\_junctio, attraction, ruins, studio, bank, theatre, fast\_food, ice\_cream, college, pharmacy, cafe, police, The Wall, pub, toilets, memorial, fuel, telephone, ferry\_terminal, buffer\_stop, water\_tower, hostel, post\_box, bus\_station, lighthouse, atm, theme\_park, fire\_station, community\_centre, post\_office, fountain, picnic\_site, works, cinema, marketplace, bar, monument, kindergarten, signal, railway\_crossing, car\_wash, doctors, townhall, viewpoint, clubhouse, guest\_house, drinking\_water, museum, battlefield, library, taxi, turning\_circle, artwork, water\_well, motel, fort, childcare, social\_centre, tower, surveillance, flagpole, dentist, rest\_area, vending\_machine, public, passing\_place, spa, parking\_entrance, unclassified, bureau\_de\_change, platform, information, nightclub, chimney, bench, turning\_loop, car\_rental, internet\_cafe, camp\_site, events\_venue, veterinary, gallery, crematorium, wayside\_cross, waste\_basket, stage, city\_gate, garage, taxi\_rank, arts\_centre, hairdresser, border\_control, swimming\_pool, water\_mill, milestone, well, fishing, bbq, leisure, lodge, boat\_rental, water\_tap, embassy, laundry, razor, bollard, power, toll\_gate, street\_lamp, photo\_booth, pitch, water\_point, barrier, prison, convenience, park, speed\_camera, graveyard, bench & unclassified \\
+		\hline
+		\end{longtable}}
+
+
+		In the table above, the 'Category' represents the layers of \ac{GIS}, while the other columns contain the values associated with those layers. These values specify the type of location, represented as polygons, for the corresponding \ac{GIS} layer.
 
 
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=1\textwidth]{Figures/india_map_with_highlighted_data.png} % Adjust the width as needed
+		\includegraphics[width=0.8\textwidth]{Figures/india_map_with_highlighted_data.png} % Adjust the width as needed
 		\caption{Map with areas highlighted that are considered for the study containing the Elevation and Slope data, solar irradiance and atmospheric conditions data and GIS information}
 		\label{fig:my_label5} % Use this label to reference the figure elsewhere
 	\end{figure}
-	
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 
-	\section{Data Modelling}
+	\subsection{Limitations of dataset}
 
+	The data regarding slope and elevation features boasts impressive quality, with a spatial resolution of 30m. However, there's a gap in our matrix when it comes
+	 to atmospheric conditions. Instead of comprehensive coverage, this data is available solely as a time series for specific locations. Additionally, due to time and 
+	 resource constraints, we only have 50 data samples to test the model. This limited dataset might 
+	 present challenges in obtaining a holistic understanding, and as we move forward, it's imperative 
+	 to optimally use this limited set for accurate model testing.
+	 
 	\section{Algorithm}
 	\subsection{AutoEncoder}
 	\subsection{Clustering}

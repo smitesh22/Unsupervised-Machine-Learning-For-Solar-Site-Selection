@@ -1542,6 +1542,7 @@ INPUT ./Figures/AutoEncoder.png
 INPUT Figures/AutoEncoder.png
 INPUT ./Figures/AutoEncoder.png
 INPUT ./Figures/AutoEncoder.png
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm
 INPUT ./Figures/india_map_with_highlighted_data.png
 INPUT ./Figures/india_map_with_highlighted_data.png
 INPUT Figures/india_map_with_highlighted_data.png
@@ -1565,6 +1566,7 @@ INPUT ./Thesis_template.brf
 INPUT ./Thesis_template.brf
 INPUT /usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
