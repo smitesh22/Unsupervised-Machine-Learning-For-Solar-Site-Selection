@@ -464,14 +464,13 @@ Locations using Autoencoder and Clustering with Application in India}}
 		\label{fig:my_label8} % Use this label to reference the figure elsewhere
 	\end{figure}
 
-	They employed a hybrid model combining a \ac{MLP} and an Autoencoder. It comprises of an encoder and a decoder, which collaboratively work to diminish the dimensionality of the input vector, 
-	representing it in a more condensed vector space known as the latent space. In this setup, the Auto-Encoder functions primarily as a feature extractor. 
-	The extracted features are subsequently used to train an \ac{MLP} for making predictions.
+	The study employed a hybrid model that combines a \ac{MLP} and an Autoencoder. 
+	The data comprised geospatial features such as slope, curvature, aspect, altitude, rainfall, and 
+	land use. Hidden representations of these features were derived using autoencoders.
 
+	The dataset was categorized into five classes representing flood risk levels: very low, low, moderate, high, and very high. Given the labeled nature of this dataset, 
+	they opted to use an MLP, which is a supervised learning method, to determine the model weights.
 
-	During the training process of an auto-encoder, the decoder's output is juxtaposed with the original input. The discrepancy in the reconstructed output is termed as the reconstruction error. 
-	This error is minimized using the backpropagation algorithm until convergence is achieved. Once trained, the encoder can then be utilized to produce a lower-dimensional 
-	representation of the data, which can be harnessed for various machine learning tasks.
 
 	\chapter{Data}
 	\label{chap:methodology}
