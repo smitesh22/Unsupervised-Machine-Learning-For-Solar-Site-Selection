@@ -59,7 +59,7 @@
 % >>>> Replace all the [[Placeholders]] on the front page and in the Declaration <<<<
 
 \title{\Large{Uncovering Optimal Solar Site
-Locations using Autoencoder and Clustering with applications in India}}
+Locations using Autoencoder and Clustering with Application in India}}
 
 \author{Smitesh Nitin Patil}
 \collegeordept{School of Computer Science}
@@ -122,7 +122,7 @@ Locations using Autoencoder and Clustering with applications in India}}
 		spatial analysis, this research aims to carve out a novel approach, distinct from studies previously undertaken in this field, to the best of the authors' 
 		knowledge. Through the analysis of diverse environmental, climatic, and topographical factors, the proposed methodology furnishes a holistic solution for 
 		discerning areas with peak solar energy potential. The outcomes not only underscore the efficacy and robustness of the suggested approach but also highlight 
-		its prospective applications in the wider scope of renewable energy planning and infrastructural development.
+		its prospective applications in the wider scope of renewable energy planning.
 		
 		\textbf{Keywords: } Geospatial Information, Unsupervised Learning, Self-supervised
 		Learning, Analytical-Hierarchical Process, Renewable energy, Site Selection,
@@ -156,6 +156,8 @@ Locations using Autoencoder and Clustering with applications in India}}
 		\acro{PV}{Photo-Voltaic}
 		\acro{NASA}{National Aeronautical and Space Agency}
 		\acro{GIS}{Global Information System}
+		\acro{PCA}{Principle Component Analysis}
+		\acro{RBMs}{Restricted Boltzmann machines}
 	\end{acronym}
 
 
@@ -221,6 +223,8 @@ Locations using Autoencoder and Clustering with applications in India}}
 	\end{enumerate}
 
 	\chapter{Background and Related Work}
+
+	This chapter highlights the methods used by researchers previous in the domain in form of a literature review.
 	
 	\section{Criteria and Factors Affecting Decision-making}
 
@@ -282,6 +286,210 @@ Locations using Autoencoder and Clustering with applications in India}}
 		\item \textbf{Economic:} Distance from urban areas, roads, transmission lines, and power plants.
 	\end{enumerate}
 
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.5\textwidth]{Figures/Saraswat.png} % Adjust the width as needed
+		\caption{ Optimal sites by level of importance by author \cite{saraswat2021}}
+		\label{fig:my_label} % Use this label to reference the figure elsewhere
+	\end{figure}
+	
+
+	\section{Analytical Hierarchical Process}
+
+	\ac{MCDMs} have been extensively employed in literature for identifying optimal solar PV plant sites. 
+	Unlike machine learning techniques, which automatically learn biases without being explicitly programmed, \ac{MCDMs} primarily focus on decision-making based on predefined criteria. 
+	These criteria are often ranked manually to guide decision-making processes.
+
+	\ac{AHP} is a widely recognized \ac{MCDMs} technique, as attested by numerous literary sources\cite{colak2020,saraswat2021,garni2017,zoghi2017}. 
+	\ac{AHP} was pioneered by Prof. Thomas Saaty\cite{saaty1988}. At its core, \ac{AHP} emphasizes ranking criteria that influence the decision-making process. 
+
+	The methodology of \ac{AHP} can be distilled into three stages:
+
+	\begin{enumerate}
+		\item \textbf{Problem Definition and Hierarchy Creation:} Begin by clearly outlining the problem. For the context of this study, the objective is to assess the suitability of a location for a solar PV plant. A hierarchy is then defined based on relevant criteria or factors, which in this instance might encompass aspects like elevation, slope, solar irradiance, land use, and land value.
+		
+		\item \textbf{Sub-Criteria Classification:} The primary criteria can be further segmented into sub-criteria, enhancing the granularity of the hierarchical structure.
+		
+		% Add the third stage if there is more information or continue as needed.
+	\end{enumerate}
+
+	After establishing a hierarchy, it is essential to define the importance of criteria or factors relative to one another. This can be achieved using a technique known as 
+	pairwise comparison. This method involves comparing each factor with every other criterion, and the results of these comparisons can be stored in a matrix, termed the 
+	pairwise comparison matrix.
+
+	Once each factor's pairwise comparison with others is documented, the subsequent step is to determine the weights for each criterion. To do this, the matrix is first normalized. 
+	Subsequently, a weighted sum of the normalized criteria weights is computed to produce a score. From the normalized vector values, the Consistency Ratio (CR) is determined to 
+	validate the hierarchy's legitimacy.
+
+	The Consistency Ratio is a crucial metric that underpins the reliability of the decision-making process. A Consistency Ratio below \(0.1\) suggests that the weights generated 
+	can be deemed consistent and acceptable~\cite{saaty1988}.
+
+	The Consistency Ratio (CR), Consistency Index (CI), and Random Consistency Index (RI) are interconnected. The formula to determine CR is:
+	\[ CR = \frac{CI}{RI} \]
+
+	Here, RI serves as a reference value instrumental in gauging the consistency of pairwise comparisons. It offers a benchmark for verifying the attained consistency for the pre-defined hierarchy. Meanwhile, CI is derived from the eigenvalue of the pairwise comparison matrix, and it is given by:
+	\[ CI = \frac{\lambda_{\text{max}} - n}{n - 1} \]
+	Where \(n\) represents the number of criteria under consideration, and \(\lambda_{\text{max}}\) is the largest eigenvalue.
+
+
+	\section{Kohonen's Model}
+
+	The Kohonen model, also known as the Kohonen neural network or \ac{SOM}, is an unsupervised clustering algorithm. It was introduced by Kohonen et al. 
+	in 1982\cite{kohonen1982}. Typically, it is employed for clustering tasks. Notably, Chang et al. utilized it extensively to identify locations with high landslide susceptibility
+	\cite{chang2020}.
+
+	One of the primary objectives of the Kohonen model is dimensionality reduction. The aim is to generate a low-dimensional representation while retaining the inherent 
+	properties of the data. This is accomplished by associating each neuron with a weight vector that has the same dimension as the input data. These weights are iteratively 
+	aligned to match the distribution of the input data.
+
+	Initially, all the weight vectors of the neurons are initialized with random values drawn from a normal distribution. Iteratively, input vectors are selected from the 
+	training data. To compute the proximity of the input vector to the weighted vector, a distance or similarity metric, such as the Euclidean distance or cosine similarity, 
+	is employed. The \ac{BMU} is the neuron whose weight vector most closely matches the input vector. Subsequently, the weights of the neurons are updated to 
+	align more closely with the selected input vector. This process continues iteratively until convergence.
+
+	Upon completion of the training phase, the Kohonen model produces a lower-dimensional vector space representation of the input data. The number of neurons in the model 
+	signifies the number of classes or clusters intended for classification. It's worth noting that the Kohonen model can be supplied with vectorized GIS data spanning multiple 
+	criteria, as demonstrated by Chang et al. in their research on landslide susceptibility\cite{chang2020}.
+
+	\section{Autoencoder}
+
+	The term Autoencoder has gained prominence in recent times due to advancements in deep learning and improvements in computational power of modern information systems. Nonetheless,
+	it is important to acknowledge that the foundational principle of "learning representations" of data specific to a domain was established as early as 1980's. Thus the term might 
+	seem recent the foundation for the idea has existed for decades.
+
+	Rumelhart, Hinton, Williams, et al. introduced one of the earliest forms of networks in 1986, which can be viewed as the foundational milestone for autoencoders\cite{rumelhart1986}.
+	This study aim to learn representations vectors from the input vectors that represent important features of the task domain for the particular data. The network structure of the neuron-like 
+	functions with internal hidden units was proposed in the study for creating this representation.
+
+	\subsection{Structure of the network}
+
+	The authors proposed a network with that consisted of an input layer at the bottom and the output layer at the top with a intermediate laye. Conditions to this network
+	stipulate that there can be no connections from the top of the network to the bottom. Although the connections can be skipped in the intermediate layer. The state at each of the neuron
+	unit will be produced by two equations.
+
+	Where $\textit{x}_j$ would be the input to next unit $\textit{j}$ defined as a linear function that is the sum of all input $\textit{y}_i$ and their connection weights $\textit{w}_ij$
+
+	\[ x_j = \sum_i w_{ij} \times y_i \]
+
+	These units should be provided with biases unique to each intermidiate layer the the value 1. As the model is trying to solve non-linear problems. $\textit{y}_j$ to the next layer
+	should be defined using a non-linear function.
+	
+	\[y_j = \frac{1}{1 + e^{-x_j}}\]
+
+	
+	\subsection{Backpropagation Algorithm}
+
+	The aim of the Backpropagation Algorithm is to find the weights \textit{w} such that the input vector closely matches the output vector. For a finite number of cases, the total error can be computed by comparing the desired output 
+	to the actual output for each vector and then summing the errors of each individual case.
+
+	The total error \textit{E} can be defined as the sum of the squared difference between the desired output $\textit{d}_j,c$ and the actual output 
+	$\textit{y}_j,c$ for each output neuron \textit{j} and for each individual case \textit{c}.
+
+
+	\[E = \frac{1}{2} \sum_{c} \sum_{j} (Y_{j,c} - d_{j,c})^2\]
+
+	To minimize the error \textit(E) using gradient descent it is essential to calculate the partial derivatives of \textit{E} with respect to each weight of the network using chain rule.
+
+	The backward pass starts with the output neuron where the actual output \(y_j\) is compared with the desired output \(d_j\) for each output neuron \(j\). 
+
+	\[\frac{\delta E}{\delta y_j} = y_j - d_j\]
+
+	Then the chain rule is applied to get the partial derivatives of previous layers neurons \(x_j\).
+
+	\[\frac{\delta E}{\delta x_j} = \frac{\delta E}{\delta y_j} \cdot \frac{\delta y_j}{\delta x_j}\]
+
+
+	The partial derivatives calculated could be used to update the weights. The weights are updated in the amount proportional to the partial derivate using the learning rate parameter.
+
+	\[\Delta w = -\epsilon \frac{\delta \text{E}}{\delta w}\]
+
+	In hindsight, the early neural networks, used for learning representations, laid the groundwork for the advent of deep learning in the 1980s. However, these networks presented several challenges that required solutions.
+
+	A primary concern centered around weight initialization. If all neurons in the network possessed identical weights, the system would fail to grasp the diverse functions crucial for accurate representation. To counter this, initializing the network with small random weights proved effective.
+
+	Additionally, the learning rate is an important hyperparameter. If set too high, the model might never converge, oscillating around the optimal solution. Conversely, a learning rate that's too low can lead to extremely slow convergence.
+
+	Even with an optimal learning rate, autoencoders aren't immune to challenges. A significant hurdle is the potential of getting trapped in a local minimum, mistakenly believing it has found the optimal solution when a better one might exist elsewhere.
+
+	With the surge in data volume, deep learning techniques and experiments from the 2000s have made significant strides in addressing these issues.
+
+
+	\section{Deep Autoencoder}
+
+	While the early Autoencoder provided a foundation for neural networks that learn representations, the volume of information and complexity of data increased with the advent of internet causing the rise of deep learning 
+	to learn complex and intricate representations. A Deep Autoencoder is essentially based on similar principles discussed by Rumelhart et al. \cite{rumelhart1986}, but as the name suggest they are used to encode and decode
+	using multiple hidden layers that gives them the ablility to learn hypotheses that can capture more complex patterns.
+
+	Hinton et al. proposed an deep Autoencoder structure in 2006 that can be used for dimensionality reduction as an alternative to \ac{PCA}.
+
+	The autoencoder developed by Hinton el al was structurally segmented into three main components:
+
+	\begin{enumerate}
+		\item \textbf{Encoder:} It compresses the data into a lower-dimensional vector space. The encoder uses a neural network with transformational layers such as fully connected,
+		 convolutional, and dropout layers.
+		
+		\item \textbf{Latent Space:} This represents the compressed version of the input vector produced by the encoder. Serves as a bottlenec which retains the core features of
+		 the data.
+		
+		\item \textbf{Decoder:} This component of the neural network endeavors to reconstruct the original input vector. Its primary function lies in computing 
+		the reconstruction cost.
+	\end{enumerate}
+
+	For the input to the encoder an ensemble of binary vectors such as images were modeled using \ac{RBMs} to get a vector as a pretraining step. After pretraining the \ac{RBMs} are unrolled and feed to the 
+	deep autoencoder for learning the representations in the latent space.
+
+	An inherent issues with Deep Autoencoders is the problem arising due to vanishing gradients during each iteration of backpropogation the network update the weights of the neuron units based on the calculated partial 
+	derivates as discussed in the previous section. The problem arises when the gradients become to small in deep networks causing the weights to not change halting the training process. Modern deep learning techniques like
+	Batch Normalisation, Dropout and Residual blocks can helop solve the problem on vanishing gradients.
+
+
+	\begin{enumerate}
+		\item \textbf{Batch Normalisation:} Batch Normalisation is a method to solve vanishing gradient problem conjured by Ioffe et al.\cite{Ioffe}, Essentially it normalises the activations of each layer to have zero mean and variance which helps ensure that the activations don't have extremely high or low values . It helps to smoothen the error landscape, thus making for the gradients to converge.
+		
+		\item \textbf{Dropout:} Dropout is a regularization technique where, random subset of neurons in layers are dropped during forward propogation to prevent overfitting. by randomly dropping neurons the network does't rely on a single path duing each training iteration, thus it also helps with the problem of vanishing gradients.
+		
+		\item \textbf{Residual Blocks:} Using Batch Normalisation during the initial training iterations can cause gradient explosion problem. To solve this we can use residual blocks which skip certain connections creating a highway of activations skipping layers, allowing activations from a earlier part of the network to be accessed by layers deeper in the network.
+	\end{enumerate}
+	
+
+	\section{A previous study that utilizes Autoencoder for geospatial data}
+
+	Ahmadlou et al. conducted comprehensive research on flood susceptibility in both Iran and India~\cite{ahmadlou2020}. In their study, geospatial data, including layers such as 
+	slope, aspect, altitude, land use, and rainfall, served as determining criteria for the model~\cite{ahmadlou2020}.
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1\textwidth]{Figures/AutoEncoder.png} % Adjust the width as needed
+		\caption{Flowchart of the model proposed by\cite{ahmadlou2020}}
+		\label{fig:my_label8} % Use this label to reference the figure elsewhere
+	\end{figure}
+
+	They employed a hybrid model combining a \ac{MLP} and an Autoencoder. It comprises of an encoder and a decoder, which collaboratively work to diminish the dimensionality of the input vector, 
+	representing it in a more condensed vector space known as the latent space. In this setup, the Auto-Encoder functions primarily as a feature extractor. 
+	The extracted features are subsequently used to train an \ac{MLP} for making predictions.
+
+
+	During the training process of an auto-encoder, the decoder's output is juxtaposed with the original input. The discrepancy in the reconstructed output is termed as the reconstruction error. 
+	This error is minimized using the backpropagation algorithm until convergence is achieved. Once trained, the encoder can then be utilized to produce a lower-dimensional 
+	representation of the data, which can be harnessed for various machine learning tasks.
+
+	\chapter{Data}
+	\label{chap:methodology}
+
+	For the task at hand, a novel methodology is proposed in this project. The features considered for this task, 
+	can be subdivided into three classes:
+
+	\begin{enumerate}
+		\item \textbf{Terrain Information:} In this case, the elevation model, denoted by \ac{DEM}, was readily available from the \ac{SRTM} mission undertaken by \ac{USGS}. This data, with a spatial resolution of 30m, is superior to the data used in previous studies by other authors. Additionally, the slope of the terrain is another crucial factor. The slope determines the amount of solar irradiance incident on the surface of the \ac{PV} cells. Furthermore, a steep slope would not be suitable for a solar \ac{PV} farm.
+		
+		\item \textbf{Solar Irradiance and Atmospheric Conditions:} These were sourced from \ac{NREL}. They play a pivotal role in identifying suitable locations. Specifically, a region with high solar irradiance, minimal overcast conditions, and high temperatures would be ideal.
+		
+		\item \textbf{Other Features:} For this project, we also considered \ac{GIS} layers from the \ac{OSM} dataset. This includes features such as railways, roadways, land use, landmarks, and urban areas.
+	\end{enumerate}
+	
+	The primary objective here is to employ K-means clustering to create clusters and identify the most suitable ones based on locations that already contain a solar PV plant within the appropriate cluster. 
+	However, given the data's diversity and high dimensionality, it's essential to reduce its dimensionality and integrate our data from various sources before applying the clustering techniques.
+
 	\section{Data Sources and Overview}
 
 	For this project, we required multiple layers of GIS data that would serve as essential features for identifying suitable locations for solar farms. 
@@ -290,12 +498,6 @@ Locations using Autoencoder and Clustering with applications in India}}
 	measured in watts per square meter (W/m\textsuperscript{2}). Additional crucial factors to consider include land cost, population density, land use, and 
 	protected wildlife sanctuaries.
 
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.5\textwidth]{Figures/Saraswat.png} % Adjust the width as needed
-		\caption{ Optimal sites by level of importance by author \cite{saraswat2021}}
-		\label{fig:my_label} % Use this label to reference the figure elsewhere
-	\end{figure}
 	
 
 	\subsection{Terrain Data}
@@ -367,113 +569,6 @@ Locations using Autoencoder and Clustering with applications in India}}
 		\label{fig:my_label5} % Use this label to reference the figure elsewhere
 	\end{figure}
 
-	\section{Analytical Hierarchical Process}
-
-	\ac{MCDMs} have been extensively employed in literature for identifying optimal solar PV plant sites. 
-	Unlike machine learning techniques, which automatically learn biases without being explicitly programmed, \ac{MCDMs} primarily focus on decision-making based on predefined criteria. 
-	These criteria are often ranked manually to guide decision-making processes.
-
-	\ac{AHP} is a widely recognized \ac{MCDMs} technique, as attested by numerous literary sources\cite{colak2020,saraswat2021,garni2017,zoghi2017}. 
-	\ac{AHP} was pioneered by Prof. Thomas Saaty\cite{saaty1988}. At its core, \ac{AHP} emphasizes ranking criteria that influence the decision-making process. 
-
-	The methodology of \ac{AHP} can be distilled into three stages:
-
-	\begin{enumerate}
-		\item \textbf{Problem Definition and Hierarchy Creation:} Begin by clearly outlining the problem. For the context of this study, the objective is to assess the suitability of a location for a solar PV plant. A hierarchy is then defined based on relevant criteria or factors, which in this instance might encompass aspects like elevation, slope, solar irradiance, land use, and land value.
-		
-		\item \textbf{Sub-Criteria Classification:} The primary criteria can be further segmented into sub-criteria, enhancing the granularity of the hierarchical structure.
-		
-		% Add the third stage if there is more information or continue as needed.
-	\end{enumerate}
-
-	After establishing a hierarchy, it is essential to define the importance of criteria or factors relative to one another. This can be achieved using a technique known as 
-	pairwise comparison. This method involves comparing each factor with every other criterion, and the results of these comparisons can be stored in a matrix, termed the 
-	pairwise comparison matrix.
-
-	Once each factor's pairwise comparison with others is documented, the subsequent step is to determine the weights for each criterion. To do this, the matrix is first normalized. 
-	Subsequently, a weighted sum of the normalized criteria weights is computed to produce a score. From the normalized vector values, the Consistency Ratio (CR) is determined to 
-	validate the hierarchy's legitimacy.
-
-	The Consistency Ratio is a crucial metric that underpins the reliability of the decision-making process. A Consistency Ratio below \(0.1\) suggests that the weights generated 
-	can be deemed consistent and acceptable~\cite{saaty1988}.
-
-	The Consistency Ratio (CR), Consistency Index (CI), and Random Consistency Index (RI) are interconnected. The formula to determine CR is:
-	\[ CR = \frac{CI}{RI} \]
-
-	Here, RI serves as a reference value instrumental in gauging the consistency of pairwise comparisons. It offers a benchmark for verifying the attained consistency for the pre-defined hierarchy. Meanwhile, CI is derived from the eigenvalue of the pairwise comparison matrix, and it is given by:
-	\[ CI = \frac{\lambda_{\text{max}} - n}{n - 1} \]
-	Where \(n\) represents the number of criteria under consideration, and \(\lambda_{\text{max}}\) is the largest eigenvalue.
-
-
-	\section{Kohonen's Model}
-
-	The Kohonen model, also known as the Kohonen neural network or \ac{SOM}, is an unsupervised clustering algorithm. It was introduced by Kohonen et al. 
-	in 1982\cite{kohonen1982}. Typically, it is employed for clustering tasks. Notably, Chang et al. utilized it extensively to identify locations with high landslide susceptibility
-	\cite{chang2020}.
-
-	One of the primary objectives of the Kohonen model is dimensionality reduction. The aim is to generate a low-dimensional representation while retaining the inherent 
-	properties of the data. This is accomplished by associating each neuron with a weight vector that has the same dimension as the input data. These weights are iteratively 
-	aligned to match the distribution of the input data.
-
-	Initially, all the weight vectors of the neurons are initialized with random values drawn from a normal distribution. Iteratively, input vectors are selected from the 
-	training data. To compute the proximity of the input vector to the weighted vector, a distance or similarity metric, such as the Euclidean distance or cosine similarity, 
-	is employed. The \ac{BMU} is the neuron whose weight vector most closely matches the input vector. Subsequently, the weights of the neurons are updated to 
-	align more closely with the selected input vector. This process continues iteratively until convergence.
-
-	Upon completion of the training phase, the Kohonen model produces a lower-dimensional vector space representation of the input data. The number of neurons in the model 
-	signifies the number of classes or clusters intended for classification. It's worth noting that the Kohonen model can be supplied with vectorized GIS data spanning multiple 
-	criteria, as demonstrated by Chang et al. in their research on landslide susceptibility\cite{chang2020}.
-
-	\section{Auto Encoder and Multi-Layer Perceptron}
-
-	Ahmadlou et al. conducted comprehensive research on flood susceptibility in both Iran and India~\cite{ahmadlou2020}. In their study, geospatial data, including layers such as 
-	slope, aspect, altitude, land use, and rainfall, served as determining criteria for the model~\cite{ahmadlou2020}.
-
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=1\textwidth]{Figures/AutoEncoder.png} % Adjust the width as needed
-		\caption{Flowchart of the model proposed by\cite{ahmadlou2020}}
-		\label{fig:my_label8} % Use this label to reference the figure elsewhere
-	\end{figure}
-
-	They employed a hybrid model combining a \ac{MLP} and an Auto-Encoder. The Auto-Encoder is a type of neural network architecture proposed by 
-	Hinton and Rumelhart~\cite{rumelhart1986}. It comprises an encoder and a decoder, which collaboratively work to diminish the dimensionality of the input vector, 
-	representing it in a more condensed vector space known as the latent space. In this setup, the Auto-Encoder functions primarily as a feature extractor. 
-	The extracted features are subsequently used to train an \ac{MLP} for making predictions.
-
-	An auto-encoder essentially operates as a neural network aiming to recreate its input. Structurally, it is segmented into three main components:
-
-	\begin{enumerate}
-		\item \textbf{Encoder:} It compresses the data into a lower-dimensional vector space. The encoder uses a neural network with transformational layers such as fully connected,
-		 convolutional, and dropout layers.
-		
-		\item \textbf{Latent Space:} This represents the compressed version of the input vector produced by the encoder. Serving as a bottleneck, it retains the core features of
-		 the data.
-		
-		\item \textbf{Decoder:} This component of the neural network endeavors to reconstruct the original input vector. Its primary function lies in computing 
-		the reconstruction cost.
-	\end{enumerate}
-
-	During the training process of an auto-encoder, the decoder's output is juxtaposed with the original input. The discrepancy in the reconstructed output is termed as the reconstruction error. 
-	This error is minimized using the backpropagation algorithm until convergence is achieved. Once trained, the encoder can then be utilized to produce a lower-dimensional 
-	representation of the data, which can be harnessed for various machine learning tasks.
-
-	\chapter{Methodology}
-	\label{chap:methodology}
-
-	For the task at hand, a novel methodology is proposed in this project. The features considered for this task, as mentioned in Section 2.2[Data Sources and Overview], 
-	can be subdivided into three classes:
-
-	\begin{enumerate}
-		\item \textbf{Terrain Information:} In this case, the elevation model, denoted by \ac{DEM}, was readily available from the \ac{SRTM} mission undertaken by \ac{USGS}. This data, with a spatial resolution of 30m, is superior to the data used in previous studies by other authors. Additionally, the slope of the terrain is another crucial factor. The slope determines the amount of solar irradiance incident on the surface of the \ac{PV} cells. Furthermore, a steep slope would not be suitable for a solar \ac{PV} farm.
-		
-		\item \textbf{Solar Irradiance and Atmospheric Conditions:} These were sourced from \ac{NREL}. They play a pivotal role in identifying suitable locations. Specifically, a region with high solar irradiance, minimal overcast conditions, and high temperatures would be ideal.
-		
-		\item \textbf{Other Features:} For this project, we also considered \ac{GIS} layers from the \ac{OSM} dataset. This includes features such as railways, roadways, land use, landmarks, and urban areas.
-	\end{enumerate}
-	
-	The primary objective here is to employ K-means clustering to create clusters and identify the most suitable ones based on locations that already contain a solar PV plant within the appropriate cluster. 
-	However, given the data's diversity and high dimensionality, it's essential to reduce its dimensionality and integrate our data from various sources before applying the clustering techniques.
 
 	\section{Data Modelling and Preprocessing}
 
