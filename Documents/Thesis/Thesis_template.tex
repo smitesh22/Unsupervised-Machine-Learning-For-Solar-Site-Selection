@@ -158,6 +158,8 @@ Locations using Autoencoder and Clustering with Application in India}}
 		\acro{GIS}{Global Information System}
 		\acro{PCA}{Principle Component Analysis}
 		\acro{RBMs}{Restricted Boltzmann machines}
+		\acro{CNN}{Convolutional Neural Network}
+		\acro{CNNs}{Convolutional Neural Networks}
 	\end{acronym}
 
 
@@ -218,8 +220,8 @@ Locations using Autoencoder and Clustering with Application in India}}
 	\section{Research Questions}
 
 	\begin{enumerate}
-		\item Can self-supervised learning techniques and clustering yield better results than \ac{MCDMs} when using higher spatial resolution data?
 		\item Given the vast and varied sources of data (e.g., \ac{NREL}, \ac{DEM} from \ac{SRTM}, \ac{OSM}), how can they be effectively integrated to yield the most comprehensive insights for solar site selection?
+		\item Is it feasible to employ a novel technique that combines autoencoders and clustering to identify optimal areas for solar PV plant installations, based on data derived from the aforementioned sources?
 	\end{enumerate}
 
 	\chapter{Background and Related Work}
@@ -469,8 +471,12 @@ Locations using Autoencoder and Clustering with Application in India}}
 	land use. Hidden representations of these features were derived using autoencoders.
 
 	The dataset was categorized into five classes representing flood risk levels: very low, low, moderate, high, and very high. Given the labeled nature of this dataset, 
-	they opted to use an MLP, which is a supervised learning method, to determine the model weights.
+	they opted to use an \ac{MLP}, which is a supervised learning method, to determine the model weights.
 
+	A \ac{MLP} is a type of neural network that consists of one input layer which in the case study consist
+	of the hidden representations learned from the autoencoder, one or multiple hidden layers connected to a 
+	output layer that predicts the class labels using the backpropogation algorithm along with a optimization
+	algorithm like gradient descent to adjust model weight iteratively.
 
 	\chapter{Data}
 	\label{chap:methodology}
@@ -667,8 +673,15 @@ Locations using Autoencoder and Clustering with Application in India}}
 		\centering
 		\includegraphics[width=0.8\textwidth]{Figures/india_map_with_highlighted_data.png} % Adjust the width as needed
 		\caption{Map with areas highlighted that are considered for the study containing the Elevation and Slope data, solar irradiance and atmospheric conditions data and GIS information}
-		\label{fig:my_label5} % Use this label to reference the figure elsewhere
+		\label{fig:my_label9} % Use this label to reference the figure elsewhere
 	\end{figure}
+
+
+	Figure \ref{fig:my_label9} highlights the geographic areas considered for this study. These specific 
+	regions were selected to capture a diverse range of locations for representation in the autoencoder. 
+	The chosen regions encompass a variety of geographical features, including tall mountains, desert 
+	landscapes, plains, plateaus, and islands.
+
 
 	\subsection{Limitations of dataset}
 
@@ -678,9 +691,130 @@ Locations using Autoencoder and Clustering with Application in India}}
 	 present challenges in obtaining a holistic understanding, and as we move forward, it's imperative 
 	 to optimally use this limited set for accurate model testing.
 	 
-	\section{Algorithm}
-	\subsection{AutoEncoder}
-	\subsection{Clustering}
+	\chapter{Methodology}
+
+	\section{Overview}
+
+	Autoencoders, as a neural network architecture, have been an essential subject of research in deep learning. 
+	A foundational understanding of autoencoders can be traced back to the works of Rumelhart et al. and 
+	Hinton et al \cite{rumelhart1986} \cite{Hinton2006}. As presented in Chapter 2, these studies laid the groundwork for the current application and 
+	understanding of autoencoders. The Deep Autoencoder, emerging from these foundational studies, serves as the primary focus of this investigation.
+
+	\section{AutoEncoder}
+
+	\subsection{Introduction}
+
+	Data prepared from steps for Data Preprocessing and Modelling that were discussed in Chapter 3 would be
+	used for developing the Autoencoder for this study. The Elevation data matrix, Slope data matric that was created 
+	using Algorithm 1, Atmospheric condition features include \ac{GHI}, \ac{DHI}, \ac{DNI}, Clearsky\_GHI, Clearsky\_DHI, 
+	Clearsky\_DNI, Temperature, Relative Humidity. 
+
+	Initially, given that the data for Slope and Elevation are represented as matrices, they are to be processed using two 
+	deep autoencoders with similar architectures. This is done after normalizing these matrices. Once these intermediate 
+	representations or embeddings are generated, they will be concatenated and passed to another autoencoder. This process 
+	aims to yield the final embeddings, which will be utilized for clustering regions with similar geographical 
+	features. Since the data for solar irradiance and atmospheric conditions are singular values, they will be fed into the 
+	final autoencoder. This will be done after dimensionality reduction of the concatenated embeddings through a few initial layers.
+
+
+	\subsection{Model Architecture}
+
+	The data for dual deep autoencoders for the slope and elevation matrices are in from of matrixes with each
+	value in matrix represention the elevation in meters and the slope gradient value at a spatial resolution of 
+	30 meters. 
+
+	Since the data is in the form of two-dimensional matrices, they can be fed through initial layers of convolutional 
+	layers for feature extraction. 
+	
+	Terminologies used in \ac{CNNs}
+	\begin{itemize}
+		\item \textbf{Convolution Operation: }At its core, convolution operations involve taking a filter of a size smaller than the 
+		input and slides it over the input to produce a feature maps.During the training phase of a \ac{CNN}, after the forward pass on the network the error is backpropogated
+		and the filter/kernel values are adjusted based on partial derivatives of previous errors. 
+		\item \textbf{Kernel/Filters: }The kernels slide over the input matrix to produce the feature map. The number of kernels determine the amount of feature maps
+		that can be produces. The dimensions of the kernels should match the image dimension for it to convolve over the matrix.
+		\item \textbf{Stride: } The value of stride determines the movement of filter over the input matrix. A stride value of 1
+		moves one pixel right at a time, for the value 2 it moves 2 pixels at the time. the value of stride determine the output matrix dimensions.
+		\item \textbf{Padding: }Padding involves adding a vector border of zeroes around the input to control the spatial size of 
+		output matrix and to ensure that the border pixels of the input matrix are processed with equal weightage.
+	 \end{itemize}
+
+	 To gee the size of the output matrix after convolution operations we can you the below formula, where
+	 $\textit{W}_{in}$ the width of input matrix, \textit{F} is the filter size and \textit{S} is the stride value and
+	 $\textit{W}_{out}$ is the dimension of output matrix
+
+	 \[W_{\text{out}} = \left\lfloor \frac{W_{\text{in}} - F + 2P}{S} + 1 \right\rfloor\]
+
+	 In the autoencoder architecture, the encoder is responsible for generating embeddings through the application of convolution 
+	 layers followed by dense layers. Consequently, the decoder seeks to upscale these embeddings. When considering the dense linear 
+	 layers within the decoder, it is necessary to mirror the architecture of the dense layers present in the encoder. To recreate the 
+	 spatial feature maps before they undergo the convolution process, the transposed convolution operation is used to learn the filters 
+	 for deconvolutional layers in the decoder.
+
+	 The transposed convolution formula to upscale the feature maps in decoder where $\textit{W}_{in}$ the width of input matrix, \textit{F} is the filter size and \textit{S} is the stride value and
+	 $\textit{W}_{out}$ is the dimension of output matrix
+
+	 \[W_{\text{out}} = (W_{\text{in}} - 1) \times S - 2P + (F - 1) + 1\]
+
+	
+
+
+	\section{Clustering}
+
+	With the embeddings created through thhe final autoencoder, K-means clustering an unsupervised 
+	clustering technique will be used to get cluster similar geospatial regions based on their euclidean distance 
+	and proximity to a centroid.
+
+	K-means clustering is a popular clustering technique that is widely recognised for its simiplicity, computational 
+	efficiency, interpretablity.
+
+	The \textit{K} in K-means represents the number of clusters to be considered for the data in the latent space of the 
+	autoencoder. Initially, the centroids are randomly selected within this latent space. Consequently, each datapoint in 
+	the latent space is assigned to a cluster based on its proximity to the centroids. This proximity is measured using 
+	distance metrics such as Euclidean, Manhattan, and Minkowski distances. After assignment, the centroids are recalculated 
+	based on the data points assigned to them in the previous step. The process continues iteratively until convergence. Here,
+	 \textit{"convergence"} typically signifies that the centroids remain relatively stable, with no significant shifts in their 
+	 positions compared to earlier iterations.
+
+	 The popularity of K-means doesn't overshadow its shortcomings. In unsupervised learning problems, the value of \textit{K} 
+	 is typically unknown. The Elbow curve method is one technique employed to determine the appropriate value for \textit{K}. 
+	 Iteratively, different values for \textit{K}, usually ranging from 1 to 10, are used to generate multiple K-means models. 
+	 For each model, the sum-of-squared distances from the points to their respective centroids are computed. These values are 
+	 then plotted against the corresponding \textit{K} values. The \textit{Elbow} point on this curve is where the rate of decrease 
+	 in the sum-of-squared distances sharply changes. Although this point is often considered a good estimate for \textit{K}, it doesn't 
+	 guarantee an optimal number of clusters. Another significant concern with K-means clustering is the algorithm's potential to get stuck in a local minimum.
+
+
+	\section{Rule-Based Classifier}
+
+	After clustering, we can analyze the results to identify suitable locations by looking for locations that have pre-existing solar PV plants, considering the 
+	geographic features of the datapoints in each cluster, etc. 
+
+	After subsetting the data points based on the cluster, we can select the geospatial locations that correspond to the embeddings of those data points. These 
+	geospatial locations were chosen based on several factors including terrain features, slope, elevation, and atmospheric conditions such as solar irradiance, 
+	humidity, and temperature. However, even with these considerations, there is still a lack of clarity regarding which regions are suitable for solar PV plants. 
+	This is because we have not taken into account \ac{GIS} layer information such as urban and rural centers, roadways, railways, and land use of the area. We will utilize 
+	the \ac{GIS} information we have collected for these regions to further refine our selection.
+
+	The \ac{GIS} data for the geospatial locations is available for 8 categories, for each category there are various
+	attributes with their corresponding area polygons which can be considered suitable or unsuitable for this study.
+
+	For example, for the layer landuse the attributes barren, vacant and greenfield can be suitable, but attributes city,
+	neighbourhood, suburb cannot will be unsuitanble for our purpose. Based on above arguments we can make a rule 
+	based classifier that crops land that would be suitable for solar PV plant installation for the geospatial locations
+	selected through the process of clustering. 
+	
+	\begin{itemize}
+		\item \textbf{Buildings: } This layer contains attributes associated with human development and therefore most of the attributes would contain area polygons that would be unsuitable with few expections 
+		like attributes vacant and None in the dataset.
+		\item \textbf{Landuse: } This layer contains attributes related to the type of activity the land is accredited to. Attributes such as barren, vacant, greenfield could be particularly useful for this study.
+		\item \textbf{Places: } Collection of human settlements like city, locality, industrial are contained in this layer.
+		\item \textbf{Railways, Roads and waterways : } Transit systems are defined in this layer as area polygons around the roads and railways.
+		\item \textbf{Natural: } Nature and wildlife reserves along with water bodies are highlighed in this layer.
+		\item \textbf{Points: } Any human developed structure like guest houses, water towers, rest areas are highlighted in this region.
+	\end{itemize}
+
+	The whole list of the attributes that are suitable and unsuitable are given in table 3.1
 
 	
 	\chapter{Experiments}
@@ -690,7 +824,7 @@ Locations using Autoencoder and Clustering with Application in India}}
 
 	\chapter{Conclusion}
 	\label{chap:conclusion}
-	\section{Future Scope}
+	\section{Limitations}
 	\section{Conclusion}
 
 	
