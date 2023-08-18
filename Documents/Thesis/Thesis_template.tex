@@ -628,16 +628,16 @@ Locations using Autoencoder and Clustering with Application in India}}
 	from the \ac{GIS} layers, as detailed in the associated table.
 
 	{\scriptsize
-	\begin{longtable}{|p{2cm}|p{12cm}|p{2cm}|}
+	\begin{longtable}{|p{2cm}|p{9cm}|p{2cm}|}
 		\caption{Spatial Data Classification} \\
 		\hline
-		\textbf{Category} & \textbf{Occupied space for a purpose, cannot be used for solar pv plants} & \textbf{Unoccupied/ Vacant can be used} \\
+		\textbf{Category} & \textbf{Unsuitable area for the study} & \textbf{Suitable region for study} \\
 		\hline
 		\endfirsthead
 		\multicolumn{3}{c}%
 		{{\bfseries \tablename\ \thetable{} -- continued from previous page}} \\
 		\hline 
-		\textbf{Category} & \textbf{Occupied space for a purpose} & \textbf{Unoccupied/ Vacant can be used} \\
+		\textbf{Category} & \textbf{Unsuitable area for the study} & \textbf{Suitable region for study} \\
 		\hline 
 		\endhead
 		
@@ -799,22 +799,22 @@ Locations using Autoencoder and Clustering with Application in India}}
 	The \ac{GIS} data for the geospatial locations is available for 8 categories, for each category there are various
 	attributes with their corresponding area polygons which can be considered suitable or unsuitable for this study.
 
-	For example, for the layer landuse the attributes barren, vacant and greenfield can be suitable, but attributes city,
-	neighbourhood, suburb cannot will be unsuitanble for our purpose. Based on above arguments we can make a rule 
-	based classifier that crops land that would be suitable for solar PV plant installation for the geospatial locations
-	selected through the process of clustering. 
-	
+	Given the criteria for solar PV plant installation, it's essential to discriminate the suitability of geospatial locations based on their respective attributes. 
+	Using the landuse layer as an example, attributes like barren, vacant, and greenfield are suitable, while attributes such as city, neighbourhood, and suburb would 
+	be unsuitable for our specific objective. Based on above arguments we can make a rule based classifier that crops land that would be suitable for solar PV plant installation 
+	for the geospatial locations selected through the process of clustering. 
+
 	\begin{itemize}
 		\item \textbf{Buildings: } This layer contains attributes associated with human development and therefore most of the attributes would contain area polygons that would be unsuitable with few expections 
 		like attributes vacant and None in the dataset.
-		\item \textbf{Landuse: } This layer contains attributes related to the type of activity the land is accredited to. Attributes such as barren, vacant, greenfield could be particularly useful for this study.
+		\item \textbf{Landuse: } Based on the type of activity associated with the land, this layer offers valuable attributes such as `barren`, `vacant`, and `greenfield` that align with the focus of our study.
 		\item \textbf{Places: } Collection of human settlements like city, locality, industrial are contained in this layer.
 		\item \textbf{Railways, Roads and waterways : } Transit systems are defined in this layer as area polygons around the roads and railways.
 		\item \textbf{Natural: } Nature and wildlife reserves along with water bodies are highlighed in this layer.
-		\item \textbf{Points: } Any human developed structure like guest houses, water towers, rest areas are highlighted in this region.
+		\item \textbf{Points: } Singular human-developed structures such as guest houses, water towers, and rest areas are presented in this layer.
 	\end{itemize}
 
-	The whole list of the attributes that are suitable and unsuitable are given in table 3.1
+	A complete list detailing the suitability and unsuitability of these attributes is tabulated in Table 3.1.
 
 	
 	\chapter{Experiments}
