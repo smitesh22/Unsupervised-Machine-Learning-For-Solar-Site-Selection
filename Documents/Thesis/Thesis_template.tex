@@ -160,6 +160,7 @@ Locations using Autoencoder and Clustering with Application in India}}
 		\acro{RBMs}{Restricted Boltzmann machines}
 		\acro{CNN}{Convolutional Neural Network}
 		\acro{CNNs}{Convolutional Neural Networks}
+		\acro{MSE}{Mean Squared Error}
 	\end{acronym}
 
 
@@ -820,23 +821,83 @@ Locations using Autoencoder and Clustering with Application in India}}
 	\chapter{Experiments and results}
 
 	This research explores the application of autoencoders and clustering to develop a novel approach for identifying 
-	prime locations suitable for solar infrastructure within India. Subsequent experiments apply the methodologies d
-	iscussed to gather insights. 
+	prime locations suitable for solar infrastructure within India. Subsequent experiments apply the methodologies discussed 
+	to gather insights while answering the research questions raised in Chapter 1. 
 
 	\section{Experiments}
 
+	The experiments were conducted with three primary considerations:
+
+	\begin{itemize}
+		\item  Optimization efforts were consistently aimed at maximizing the efficiency and accuracy of location predictions,
+		all while taking into account the limited computational resources available
+		\item The visualisations should give a clear idea on suitable geolocations available for the regions under consideration.
+		\item The research questions raised in Chapter 1 are answered.
+	\end{itemize}
+
 	\subsection{Experiment Settings}
 
-	The Experiments were run using three things in mind.
+	Before running the Autoencoder, some preprocessing steps are essential. The slope data represents the gradient of change between 
+	two spatial points in the matrix. Consequently, the gradient for the slope feature of the model ranges between values 0 and 1. 
+	However, the elevation data, which presents spatial points in terms of meters, requires normalization. Feature scaling through 
+	normalization is crucial for regression problems since the scales of the matrices differ significantly. Z-normalization, often 
+	referred to as standard normalization, adjusts the data such that it has a mean of 0 and a standard deviation of 1.
+	
+	The two autoencoders were tested on various hyper parameter combinations are the following were found to give the best
+	results on validation and test datasets.
 
-	1. Optimization efforts were consistently aimed at maximizing the efficiency and accuracy of location predictions,
-	all while taking into account the limited computational resources available
+	\begin{table}[H]
+		\centering
+		\begin{tabularx}{1\textwidth}{|X|X|X|}
+		\hline
+		\textbf{Hyperparameter} & \textbf{Slope AutoEncoder} & \textbf{Elevation AutoEncoder} \\
+		\hline
+		Batch size & 6 & 5 \\
+		\hline
+		Learning rate & $3 \times 10^{-5}$ & $1 \times 10^{-5}$ \\
+		\hline
+		Optimizer & Adam & Adam \\
+		\hline
+		Loss function & \ac{MSE} & \ac{MSE} \\
+		\hline
+		Training epochs (depends on early stopping) & 84 & 100 \\
+		\hline
+		Latent dimension size & 1000 & 1000 \\
+		\hline
+		\end{tabularx}
+		\caption{Hyperparameters for Slope and Elevation AutoEncoders}
+		\end{table}
+		
+		The third autoencoder, which takes the concatenated latent spaces of the previous autoencoders and atmospheric conditions as input, is also finely tuned with respect to hyperparameters. Using a batch size of 4
+		and the Adam optimizer with a learning rate of  $1 \times 10^{-5}$, it encodes the input into a latent space of 
+		250 dimensions. The final embeddings, of size 250, are considered for clustering.
 
-	2. The visualisations should give a clear idea on suitable geolocations available for the regions under consideration.
+		For clustering, the primary hyperparameter of interest is \textit{K}, which denotes the number of clusters to be generated during the clustering process. The optimal value for \textit{K} is determined 
+		using the elbow method, along with through visual inspection of the geolocations that are clustered together.
+		
+		Finally, the geolocations identified as most suitable from the clusters will be put through a rule-based classifier. This classifier discriminates among the available land within these geolocations based on rules established for the layers and attributes of the \ac{GIS} data.
+		
+		
+		Following additional rules were also considered in the selection of area polygons deemed suitable for the setup of solar infrastructure. 
 
-	3. The research questions raised in Chapter 1 are answered.
+		\begin{itemize}
+			\item A buffer of 1000 meters was applied around the layer attributes to maintain a safe distance from attributes deemed unsuitable.
+			\item Area polygons suitable but too small to accommodate the required solar infrastructure were excluded from the map.
+			\item Geospatial locations within the suitable clusters that lacked sufficient area for solar plants were also discared.
+		\end{itemize}
+
+		
+
+
 
 	
+
+
+	
+
+	
+
+
 
 	\section{Results}
 
